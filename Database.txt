@@ -1,0 +1,19 @@
+Users
+- ID
+- Username
+- Password
+- Role
+
+Rooms
+- ID
+- Number
+
+Equipment(addition)
+
+Classes
+- ID
+- Name
+
+Timetable
+- ID
+- Table
