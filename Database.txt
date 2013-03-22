@@ -1,19 +1,25 @@
 Users
-- ID
+- ID (AUTO_INCREMENT PRIMARY_KEY)
 - Username
 - Password
 - Role
 
 Rooms
-- ID
-- Number
+//- ID
+- Number(PRIMARY_KEY FK -ClassRooms)
 
 Equipment(addition)
 
 Classes
-- ID
+- ID(PRIMARY_KEY FK- ClassRooms)
 - Name
 
 Timetable
 - ID
 - Table
+
+
+ClassRooms
+-id (AUTO_INCREMENT PRIMARY_KEY)
+-id(FK - Classes)
+-Number(FK -Rooms)
