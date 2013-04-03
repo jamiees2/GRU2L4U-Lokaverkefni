@@ -1,25 +1,34 @@
-Users
+Users (holds all the users that can access the system, and their role in the system)
 - ID (AUTO_INCREMENT PRIMARY_KEY)
 - Username
+- Email
 - Password
 - Role
+- Created_At (TIMESTAMP)
+- Updated_At (TIMESTAMP)
 
-Rooms
-//- ID
-- Number(PRIMARY_KEY FK -ClassRooms)
+Rooms (Holds a list of all the rooms available)
+- ID
+- Number
+- Type (FK - Types(ID))
+
+Types (Holds the type of the classroom, (tölvustofa, vinnustofa .....))
+- ID
+- Description
 
 Equipment(addition)
 
-Classes
-- ID(PRIMARY_KEY FK- ClassRooms)
-- Name
-
-Timetable
+Classes (Holds a list of the classes taught in the respective classrooms)
 - ID
-- Table
+- Name
+- Description
 
+Timetable (Holds a time of what class is in which classroom, and when)
+- ID
+- Room_id (FK - Rooms(ID))
+- Class_id (FK - Classes(ID))
+- Starts_At (TIMESTAMP)
+- Ends_At (TIMESTAMP)
+- Created_At (TIMESTAMP)
+- Updated_At (TIMESTAMP)
 
-ClassRooms
--id (AUTO_INCREMENT PRIMARY_KEY)
--id(FK - Classes)
--Number(FK -Rooms)
