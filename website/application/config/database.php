@@ -14,7 +14,7 @@ return array(
 	|
 	*/
 
-	'profile' => false,
+	'profile' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -70,7 +70,7 @@ return array(
 		'mysql' => array(
 			'driver'   => 'mysql',
 			'host'     => '127.0.0.1',
-			'database' => 'database',
+			'database' => 'gru_lokaverkefni',
 			'username' => 'root',
 			'password' => '',
 			'charset'  => 'utf8',
