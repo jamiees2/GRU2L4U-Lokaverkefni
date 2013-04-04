@@ -10,10 +10,16 @@ Tímatafla
 
 
 C# hlutur:
-
+Séð dagskrá
+Skrá dagskrá/áfanga
+Fer ítarlega í dagskránna
+Acceptar beiðnir
 
 
 Vefsíða:
+Responsive
+Séð dagskrá (+sundurliðun)
+Panta stofu
 
 
 Ideas:
