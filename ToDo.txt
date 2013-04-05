@@ -12,6 +12,7 @@ Tímatafla
 C# hlutur:
 Séð dagskrá
 Skrá dagskrá/áfanga
+bæta við nýrri stofu
 Fer ítarlega í dagskránna
 Acceptar beiðnir
 
@@ -20,6 +21,8 @@ Vefsíða:
 Responsive
 Séð dagskrá (+sundurliðun)
 Panta stofu
+Leiguskilmála?
+Fá staðfestingu í pósti (eða þegar búið er að accepta)
 
 
 Ideas:
