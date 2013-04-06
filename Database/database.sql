@@ -77,3 +77,54 @@ ALTER TABLE rooms ADD CONSTRAINT rooms_type_foreign FOREIGN KEY (type) REFERENCE
 ALTER TABLE timetable ADD CONSTRAINT timetable_class_id_foreign FOREIGN KEY (class_id) REFERENCES classes(id), ADD CONSTRAINT timetable_room_id_foreign FOREIGN KEY (room_id) REFERENCES rooms (id);
 ALTER TABLE timetable ADD users_id INT(10) unsigned NOT NULL;
 ALTER TABLE timetable ADD CONSTRAINT fk_users_id FOREIGN KEY(users_id) REFERENCES users(id);
+
+ALTER TABLE timetable
+DROP starts_at,
+DROP ends_at,
+DROP created_at, 
+DROP updated_at;
+
+CREATE TABLE IF NOT EXISTS Ref_Periods(
+Period_Number INT(11) NOT NULL,
+Period_start_time VARCHAR(20),
+Period_End_time VARCHAR(20),
+PRIMARY KEY(Period_Number));
+
+INSERT INTO Ref_Periods(Period_Number,Period_start_time,Period_End_time) 
+VALUES
+(1,'8:10','8:50'),
+(2,'8:50','9:30'),
+(3,'9:50','10:30'),
+(4,'10:30','11:10'),
+(5,'11:15','11:55'),
+(6,'11:55','12:35'),
+(7,'12:35','13:15'),
+(8,'13:15','13:55'),
+(9,'13:55','14:35'),
+(10,'14:40','15:20'),
+(11,'15:20','16:00'),
+(12,'16:55','17:35'),
+(13,'17:35','18:15'),
+(14,'18:15','18:55'),
+(15,'18:55','19:35');
+
+CREATE TABLE IF NOT EXISTS Ref_Days(
+Day_Number INT(8) NOT NULL,
+Day_Name VARCHAR(25) NOT NULL,
+PRIMARY KEY(Day_Number));
+
+INSERT INTO Ref_Days(Day_Number,Day_Name) 
+VALUES
+(1,'Mánudagur'),
+(2,'Þriðjudagur'),
+(3,'Miðvikudagur'),
+(4,'Fimtudagur'),
+(5,'Föstudagur'),
+(6,'Laugardagur'),
+(7,'Sunnudagur');
+
+ALTER TABLE timetable 
+ADD Day_Number INT(8) NOT NULL, 
+ADD CONSTRAINT FK_Day_Number FOREIGN KEY(Day_Number) REFERENCES ref_days(Day_Number),
+ADD Period_Number INT(11) NOT NULL, 
+ADD CONSTRAINT FK_Period_Number FOREIGN KEY(Period_Number) REFERENCES ref_periods(Period_Number);

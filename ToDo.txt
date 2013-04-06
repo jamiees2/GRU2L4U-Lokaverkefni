@@ -27,3 +27,5 @@ Fá staðfestingu í pósti (eða þegar búið er að accepta)
 
 Ideas:
 Myndir af stofum
+Myndir af nöfnum af áföngum og draga þá inní reiti(töflu)
+Ef vikan breytist yfir önnina, áfangar skiptast á stofum
