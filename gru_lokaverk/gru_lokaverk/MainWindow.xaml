@@ -1,8 +1,60 @@
 ﻿<Window x:Class="gru_lokaverk.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="600">
     <Grid>
-        
+        <TabControl Height="400" Width="580" HorizontalAlignment="Left" Margin="0,12,0,0" Name="tabControl1" VerticalAlignment="Top"  TabStripPlacement="Left">
+            <TabItem Header="tab 1" Name="tabItem1">
+                
+                <Grid Name="WeekPlan" Width="510" Background="LightSteelBlue" ShowGridLines="True" >
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Label Name="tuestday3x3" Grid.Row="0" Grid.Column="2" Content="test"></Label>
+                </Grid>
+            
+                
+
+            </TabItem>
+            <TabItem Header="tabItem2" Name="tabItem2">
+                <Grid />
+            </TabItem>
+            <TabItem Header="tabItem3" Name="tabItem3">
+                <Grid />
+            </TabItem>
+            <TabItem Header="tabItem4" Name="tabItem4">
+                <Grid />
+            </TabItem>
+            <TabItem Header="tabItem5" Name="tabItem5">
+                <Grid Height="400" Width="508" />
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

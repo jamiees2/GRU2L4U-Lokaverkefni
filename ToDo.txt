@@ -12,6 +12,7 @@ Tímatafla
 C# hlutur:
 Séð dagskrá
 Skrá dagskrá/áfanga
+breyta tíma (hvenær tími byrjar/endar)
 bæta við nýrri stofu
 Fer ítarlega í dagskránna
 Acceptar beiðnir
@@ -23,9 +24,13 @@ Séð dagskrá (+sundurliðun)
 Panta stofu
 Leiguskilmála?
 Fá staðfestingu í pósti (eða þegar búið er að accepta)
+Geta niðurhalað admin client ef user hefur réttindi
 
 
 Ideas:
 Myndir af stofum
 Myndir af nöfnum af áföngum og draga þá inní reiti(töflu)
 Ef vikan breytist yfir önnina, áfangar skiptast á stofum
+
+
+Breyta logo á vefsíðu (mynd í tabinu)
