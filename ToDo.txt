@@ -4,35 +4,37 @@ Ggrunnur:
 Users
 Stofur
 "equipment"
-Áfangi
-Tímatafla
+ï¿½fangi
+Tï¿½matafla
 
 
 
 C# hlutur:
-Séð dagskrá
-Skrá dagskrá/áfanga
-breyta tíma (hvenær tími byrjar/endar)
-bæta við nýrri stofu
-Fer ítarlega í dagskránna
-Acceptar beiðnir
+Sï¿½ï¿½ dagskrï¿½
+Skrï¿½ dagskrï¿½/ï¿½fanga
+breyta tï¿½ma (hvenï¿½r tï¿½mi byrjar/endar)
+bï¿½ta viï¿½ nï¿½rri stofu
+Fer ï¿½tarlega ï¿½ dagskrï¿½nna
+Acceptar beiï¿½nir
 
 
-Vefsíða:
+Vefsï¿½ï¿½a:
 Responsive
-Séð dagskrá (+sundurliðun)
+Sï¿½ï¿½ dagskrï¿½ (+sundurliï¿½un)
 Panta stofu
-Leiguskilmála?
-Fá staðfestingu í pósti (eða þegar búið er að accepta)
-Geta niðurhalað admin client ef user hefur réttindi
+Leiguskilmï¿½la?
+Fï¿½ staï¿½festingu ï¿½ pï¿½sti (eï¿½a ï¿½egar bï¿½iï¿½ er aï¿½ accepta)
+Geta niï¿½urhalaï¿½ admin client ef user hefur rï¿½ttindi
 
 
 Ideas:
 Myndir af stofum
-Myndir af nöfnum af áföngum og draga þá inní reiti(töflu)
-Ef vikan breytist yfir önnina, áfangar skiptast á stofum
-Ensk/Íslenska (Tungumála valmöguleiki)
+Myndir af nï¿½fnum af ï¿½fï¿½ngum og draga ï¿½ï¿½ innï¿½ reiti(tï¿½flu)
+Ef vikan breytist yfir ï¿½nnina, ï¿½fangar skiptast ï¿½ stofum
+Ensk/ï¿½slenska (Tungumï¿½la valmï¿½guleiki)
 Kort
+Annir
+Conflict Resolution
 
 
-Breyta logo á vefsíðu (mynd í tabinu)
+Breyta logo ï¿½ vefsï¿½ï¿½u (mynd ï¿½ tabinu)
