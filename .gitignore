@@ -164,3 +164,4 @@ pip-log.txt
 
 #Database
 gru_lokaverk/gru_lokaverk/sql.cs
+website/app/config/database.php
