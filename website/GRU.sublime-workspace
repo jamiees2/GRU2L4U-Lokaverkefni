@@ -1,0 +1,930 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"is_",
+				"is_array"
+			],
+			[
+				"Schema",
+				"Schema	Laravel: Schema::drop()"
+			],
+			[
+				"V",
+				"View	Laravel: View::make()"
+			],
+			[
+				"Route",
+				"Route	Laravel: Route::get()"
+			],
+			[
+				"Member",
+				"MemberController"
+			],
+			[
+				"pass",
+				"password_field"
+			],
+			[
+				"Sche",
+				"Schema	Laravel: Schema::table()"
+			],
+			[
+				"Sch",
+				"Schema	Laravel: Schema::drop()"
+			],
+			[
+				"Schem",
+				"Schema	Laravel: Schema::create()"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"mb_de",
+				"mb_detect_encoding"
+			],
+			[
+				"status_ty",
+				"status_type_id"
+			],
+			[
+				"succ",
+				"successFunction"
+			],
+			[
+				"tot",
+				"total_cost"
+			],
+			[
+				"edit",
+				"editClick"
+			],
+			[
+				"start",
+				"startedChangeDate"
+			],
+			[
+				"star",
+				"startedChangeTime"
+			],
+			[
+				"datepo",
+				"datepicker_completed"
+			],
+			[
+				"date",
+				"datepicker_completed"
+			],
+			[
+				"HT",
+				"HTML"
+			],
+			[
+				"thumbM",
+				"thumbMaxWidth"
+			],
+			[
+				"margin",
+				"marginLeft"
+			],
+			[
+				"reci",
+				"recipe-description"
+			],
+			[
+				"recip",
+				"recipe-header"
+			],
+			[
+				"VSH",
+				"VSH2A3U"
+			],
+			[
+				"N",
+				"NÁT123"
+			],
+			[
+				"For",
+				"FOR1B3U"
+			],
+			[
+				"TÆk",
+				"TÆK2A3U"
+			],
+			[
+				"Í",
+				"Íslenska"
+			],
+			[
+				"num",
+				"num3"
+			],
+			[
+				"lu",
+				"luckyNumber"
+			],
+			[
+				"rec",
+				"recipe-special"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"nth",
+				":nth-child(|)"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"ssbl",
+				"Set Syntax: Blade"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ssbla",
+				"Set Syntax: Blade"
+			],
+			[
+				"ssblade",
+				"Set Syntax: Blade"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ssblad",
+				"Set Syntax: Blade"
+			],
+			[
+				"ssphp",
+				"Set Syntax: PHP"
+			],
+			[
+				"reindent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"reinde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"sshtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"git di",
+				"Git: Diff All"
+			],
+			[
+				"gpus",
+				"Git: Push"
+			],
+			[
+				"gc",
+				"Git: Commit"
+			],
+			[
+				"ga",
+				"Git: Add Current File"
+			],
+			[
+				"gad",
+				"Git: Add Current File"
+			],
+			[
+				"gadd",
+				"Git: Add Current File"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"gitadd",
+				"Git: Add..."
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"tag",
+				"Tag: Auto-Format Tags on Selection"
+			],
+			[
+				"lint",
+				"Tag: Lint Selection or Document"
+			],
+			[
+				"ta",
+				"Tag: Auto-Format Tags on Selection"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
+			[
+				"new fil",
+				"File: New File Relative to Current View"
+			],
+			[
+				"gitpus",
+				"Git: Push"
+			],
+			[
+				"gitcoh",
+				"Git: Commit history"
+			],
+			[
+				"gitcomm",
+				"Git: Commit history"
+			],
+			[
+				"gitcommi",
+				"Git: Commit"
+			],
+			[
+				"giadd",
+				"Git: Add..."
+			],
+			[
+				"gitcom",
+				"Git: Commit"
+			],
+			[
+				"giad",
+				"Git: Add..."
+			],
+			[
+				"gs",
+				"Git: Status"
+			],
+			[
+				"git st",
+				"Git: Status"
+			],
+			[
+				"git ad",
+				"Git: Add..."
+			],
+			[
+				"gipu",
+				"Git: Pull"
+			],
+			[
+				"gitc",
+				"Git: Commit"
+			],
+			[
+				"gitad",
+				"Git: Add..."
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"gitco",
+				"Git: Commit"
+			],
+			[
+				"gi",
+				"Git: Push"
+			],
+			[
+				"gic",
+				"Git: Commit"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"gitst",
+				"Git: Status"
+			],
+			[
+				"ssph",
+				"Set Syntax: PHP"
+			],
+			[
+				"git",
+				"Git: Status"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pinst",
+				"Package Control: Install Package"
+			],
+			[
+				"premov",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ssql",
+				"Set Syntax: SQL"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"sssql",
+				"Set Syntax: SQL"
+			],
+			[
+				"ssht",
+				"Set Syntax: HTML"
+			],
+			[
+				"sshtm",
+				"Set Syntax: HTML"
+			],
+			[
+				"cssti",
+				"Tidy CSS (Highest Compression)"
+			],
+			[
+				"pretti",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"pretty",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"re",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"snippe",
+				"Snippet: ipad"
+			],
+			[
+				"snipp",
+				"Snippet: smartphone"
+			],
+			[
+				"snippet",
+				"Snippet: portrait"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"button",
+				"Snippet: Bootstrap large button"
+			],
+			[
+				"fetch",
+				"Fetch: Manage remote files"
+			],
+			[
+				"syntaxht",
+				"Set Syntax: HTML"
+			],
+			[
+				"syntaxco",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 477.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/routes.php",
+		"/C/Users/James/Documents/Nem/GRU/GRU2L4U-Lokaverkefni/.gitignore",
+		"/C/Users/James/Documents/Nem/GRU/GRU2L4U-Lokaverkefni/website/app/config/database.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/controllers/MemberController.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/admin/user.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/admin/user.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/controllers/AnnouncementController.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/database/migrations/2013_04_07_152053_entrust_setup_tables.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/vendor/zizaco/confide/src/config/config.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/forritun/announcements.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/public/js/form-terminal.js",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/models/member.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/public/js/forgot-terminal.js",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/members/emails/passwordreset.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/public/js/reset-terminal.js",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/forritun/reset_password.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/admin/new_announcement.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/admin/announcement.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/filters.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/admin/announcements.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/forritun/members.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/forritun/navbar.blade.php",
+		"/C/Users/James/Downloads/announcements.sql",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/public/js/login-terminal.js",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/emails/passwordreset.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/public/js/register-terminal.js",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/forritun/layout.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/controllers/AdminController.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/forritun/forgot_password.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/members/forgot_password.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/vendor/zizaco/confide/src/Zizaco/Confide/Confide.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/vendor/zizaco/confide/src/Zizaco/Confide/ConfideUser.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/vendor/zizaco/confide/src/views/emails/passwordreset.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/members/reset_password.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/vendor/zizaco/confide/src/lang/en/confide.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/models/role.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/config/view.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/public/css/style.css",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/libraries/navbar.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/public/js/forgot_terminal.js",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/database/migrations/2013_04_07_132136_create_announcements_table.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/composer.json",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/bootstrap/start.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/config/app.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/vendor/monolog/monolog/tests/Monolog/Handler/FingersCrossedHandlerTest.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/models/announcement.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/forritun/login.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/views/forritun/faq.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel_old/application/config/application.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/config/mail.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/config/auth.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/public/js/jquery.terminal-0.6.2.min.js",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/public/js/terminal.js",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/vendor/zizaco/confide/src/views/forgot_password.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/database/migrations/2013_04_06_171540_confide_setup_users_table.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/database/migrations/2013_04_05_210344_add_password_role_members_table.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/database/migrations/2013_04_01_230545_create_members_table.php",
+		"/C/Users/James/Downloads/laravel_migrations.sql",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel_old/application/start.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/start/global.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/start/local.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/config/database.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/config/production/database.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/app/config/local/database.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/bootstrap/start.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/app/models/member.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/app/config/database.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/routes.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/app/config/local/database.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/bundles.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/composer.json",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/app/config/app.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/app/views/forritun/register.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/app/views/forritun/members.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/app/views/forritun/login.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/server.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/bootstrap/paths.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/bootstrap/autoload.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/bootstrap/compiled.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/app/start/local.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/app/start/global.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/vendor/laravel/framework/src/Illuminate/Foundation/start.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/app/routes.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/start.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/config/auth.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/libraries/memberauth.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel4/app/views/hello.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/paths.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/config/database.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/views/forritun/login.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/views/forritun/register.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/views/home/index.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/views/forritun/members.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/bundles/swiftmailer/start.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/bundles/swiftmailer/bundle.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/bundles/swiftmailer/library/preferences.php",
+		"/C/xampp/php/php.ini",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/libraries/auth.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/laravel/auth/drivers/eloquent.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/views/forritun/layout.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/migrations/2013_04_05_210344_add_password_role_members_table.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/views/home/members.blade.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/.gitignore",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/migrations/2013_04_05_205840_create_users_table.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/migrations/2013_04_05_210050_edit_members_table.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/config/application.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/config/production/database.php",
+		"/C/Users/James/Documents/Nem/GRU/GRU2L4U-Lokaverkefni/website/application/migrations/2013_04_04_104906_add_types.php",
+		"/C/Users/James/Documents/Nem/GRU/GRU2L4U-Lokaverkefni/website/application/migrations/2013_04_04_105556_add_rooms.php",
+		"/C/Users/James/Downloads/gru_lokaverkefni.sql",
+		"/C/Users/James/Documents/Nem/GRU/GRU2L4U-Lokaverkefni/website/application/migrations/2013_04_04_120210_add_classes.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/migrations/2013_04_01_230545_create_members_table.php",
+		"/C/Users/James/Downloads/classes.sql",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/models/member.php",
+		"/C/Users/James/Documents/Nem/GRU/GRU2L4U-Lokaverkefni/Database.txt",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/config/error.php",
+		"/C/xampp/apache/conf/extra/httpd-vhosts.conf",
+		"/C/Users/James/.ssh/id_rsa.pub",
+		"/C/Users/James/.ssh/id_rsa",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/application/migrations/2013_04_01_230545_create_users_table.php",
+		"/C/Users/James/Documents/Nem/GRU/GRU2L4U-Lokaverkefni/website/application/config/database.php",
+		"/C/Users/James/Documents/Nem/FOR/Projects/Forritun.Nuts.is/public/index.php",
+		"/C/Users/James/Documents/Nem/GRU/GRU2L4U-Lokaverkefni/website/application/migrations/2013_04_03_082122_create_types_table.php",
+		"/C/Users/James/Documents/Nem/GRU/GRU2L4U-Lokaverkefni/website/application/migrations/2013_04_03_082134_create_classes_table.php",
+		"/C/Users/James/Documents/Nem/GRU/GRU2L4U-Lokaverkefni/website/application/migrations/2013_04_03_082047_create_rooms_table.php",
+		"/C/Users/James/Documents/Nem/GRU/GRU2L4U-Lokaverkefni/website/application/migrations/2013_04_03_082143_create_time_table.php",
+		"/C/Users/James/Documents/Nem/GRU/GRU2L4U-Lokaverkefni/website/application/migrations/2013_04_03_082022_create_users_table.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<strong>(.*)</strong>",
+			"<div class=\"span12\">(.*)</div>",
+			"<h3 class=\"answer\">(.*)</h3>",
+			"<h2 class=\"question\">(.*)</h2>",
+			"login_info",
+			"signin_stuff",
+			"extract",
+			"sum(",
+			"sum",
+			"$job",
+			"job",
+			"dpg",
+			"dpgblobal",
+			"update",
+			"spinner.gif",
+			"select2.png",
+			"png",
+			"highlight",
+			"toggleMeridi",
+			"update(",
+			"update",
+			"user",
+			"attempt(",
+			"attempt",
+			"$_POST",
+			"fcharset",
+			"flags[\"fonttbl_want_fcharset",
+			"flags",
+			"Has_Many_And_Belongs_to",
+			"Has_Many",
+			"$id",
+			"function",
+			"static",
+			"function",
+			"append",
+			"delete",
+			"move",
+			"local",
+			"opacity",
+			";Ágæ",
+			"BLT samloka",
+			"Jerk Kjúklingur",
+			"kjúklingakarr",
+			"<p class=\"stats\">",
+			"<div class=\"recipe-padded\">\n                    <img class=\"thumb-special\" src=\"img/sandwich.jpg\"/>\n                    <div class=\"recipe-meta\">\n                        <h2 class=\"description-special\">BLT samloka</h2>\n                        <p class=\"stats\">\n                            <span class=\"likes\">24 manns líkar þessi uppskrift</span>\n                        </p>\n                    </div>\n                </div>\n                <div class=\"props\">\n                    <a class=\"profilepic\" title=\"James Elías\" href=\"#\">\n                        <img alt=\"Prófílmynd af James Elías\" src=\"img/user-profile-image-small.png\"></a>\n                    <p>\n                        <a href=\"#\">James Elías</a>\n                        í\n                        <a href=\"#\">Samlokuuppskriftir</a>\n                    </p>\n                </div>",
+			"<div class=\"grid_2 recipe-special\">",
+			"special",
+			"<article class=\"recipe\">",
+			"recipe",
+			"ul",
+			"<article>",
+			"<div class=\"recipe\">",
+			"</article>",
+			"<article>",
+			"before",
+			"!important",
+			"from",
+			"pq",
+			"hsla",
+			"ul",
+			"http://s1.mbtcdn.com/images/user-profile/",
+			"http://s1.mbtcdn.com/images/user-profile/user-profile-image-small.png",
+			"0",
+			" clearfix",
+			"width",
+			"float:ri",
+			"<div class=\"clear\">&nbsp;</div>",
+			"=\"#\">",
+			"Content",
+			"assets"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"<h3>$1</h3>",
+			"<div class=\"span12\"><strong>$1</strong>",
+			"<br/>>$1</div>",
+			"<div class=\"span10 offset1\">$1</div>",
+			"<div class=\"span10 offset2\">$1</div>",
+			"<div class=\"span12\">$1</div>",
+			"../img/spinner.gif",
+			"../img/select2.png",
+			"$key",
+			"Ágæ",
+			"<article class=\"recipe\">",
+			"<article>",
+			"</div>",
+			"<div class=\"recipe\">",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"rolescreate",
+				"vendor/monolog/monolog/tests/Monolog/Handler/FingersCrossedHandlerTest.php"
+			],
+			[
+				"urlgen",
+				"vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php"
+			],
+			[
+				"home",
+				"application/controllers/home.php"
+			],
+			[
+				"sql",
+				"laravel/database/connectors/sqlserver.php"
+			],
+			[
+				"sqlser",
+				"laravel/database/connectors/sqlserver.php"
+			],
+			[
+				"html",
+				"laravel/html.php"
+			],
+			[
+				"form",
+				"laravel/form.php"
+			],
+			[
+				"appli",
+				"application/config/local/application.php"
+			],
+			[
+				"connector",
+				"laravel/database/connectors/connector.php"
+			],
+			[
+				"confdat",
+				"application/config/database.php"
+			],
+			[
+				"data",
+				"laravel/database.php"
+			],
+			[
+				"appl",
+				"application/config/application.php"
+			],
+			[
+				"view",
+				"laravel/view.php"
+			],
+			[
+				"quer",
+				"laravel/database/query.php"
+			],
+			[
+				"rout",
+				"application/routes.php"
+			],
+			[
+				"search",
+				"public/js/search.js"
+			],
+			[
+				"style",
+				"public/css/style.css"
+			],
+			[
+				"auth",
+				"laravel/tests/application/config/auth.php"
+			],
+			[
+				"route",
+				"application/routes.php"
+			],
+			[
+				"elo",
+				"laravel/auth/drivers/eloquent.php"
+			],
+			[
+				"cust",
+				"application/models/Customer.php"
+			],
+			[
+				"pivot",
+				"laravel/database/eloquent/pivot.php"
+			],
+			[
+				"star",
+				"application/start.php"
+			],
+			[
+				"has_ma",
+				"laravel/database/eloquent/relationships/has_many_and_belongs_to.php"
+			],
+			[
+				"start",
+				"application/start.php"
+			],
+			[
+				"relat",
+				"laravel/database/eloquent/relationships/has_many_and_belongs_to.php"
+			],
+			[
+				"conhome",
+				"application/controllers/home.php"
+			],
+			[
+				"configdatab",
+				"application/config/database.php"
+			],
+			[
+				"",
+				"application/config/local/application.php"
+			],
+			[
+				"sty",
+				"public/css/style.css"
+			],
+			[
+				"file",
+				"laravel/file.php"
+			],
+			[
+				"sup/inde",
+				"application/views/support/index.blade.php"
+			],
+			[
+				"shows",
+				"shows.txt"
+			],
+			[
+				"inde",
+				"index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/Users/James/Documents/Work/Support/Support.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

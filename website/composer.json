@@ -1,6 +1,8 @@
 {
 	"require": {
-		"laravel/framework": "4.0.*"
+		"laravel/framework": "4.0.*",
+		"teepluss/asset": "dev-master",
+		"laravelbook/laravel4-powerpack": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

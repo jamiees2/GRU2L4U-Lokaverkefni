@@ -100,6 +100,9 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Teepluss\Asset\AssetServiceProvider',
+		'LaravelBook\Laravel4Powerpack\Providers\PowerpackServiceProvider',
+
 	),
 
 	/*
@@ -164,6 +167,11 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
+		'Asset' => 'Teepluss\Asset\Facades\Asset',
+		'HTML' => 'LaravelBook\Laravel4Powerpack\Facades\HTMLFacade',
+	    'Form' => 'LaravelBook\Laravel4Powerpack\Facades\FormFacade',
+	    'Str' => 'LaravelBook\Laravel4Powerpack\Facades\StrFacade', 
 
 	),
 
