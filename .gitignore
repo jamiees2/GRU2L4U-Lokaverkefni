@@ -161,3 +161,6 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+#Database
+gru_lokaverk/gru_lokaverk/sql.cs
