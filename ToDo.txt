@@ -32,6 +32,7 @@ Myndir af stofum
 Myndir af nöfnum af áföngum og draga þá inní reiti(töflu)
 Ef vikan breytist yfir önnina, áfangar skiptast á stofum
 Ensk/Íslenska (Tungumála valmöguleiki)
+Kort
 
 
 Breyta logo á vefsíðu (mynd í tabinu)
