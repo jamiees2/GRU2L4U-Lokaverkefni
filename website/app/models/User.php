@@ -48,5 +48,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->email;
 	}
-
+	public function timetable(){
+		return $this->hasMany('TimeTable','users_id');
+	}
 }

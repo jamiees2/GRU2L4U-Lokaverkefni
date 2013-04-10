@@ -10,8 +10,8 @@
     <!-- Le styles -->
     {{HTML::style('css/bootstrap.css')}}
     {{HTML::style('css/style.css')}}
-    <style type="text/css">
-
+    <style>
+      
     </style>
     {{ HTML::style('css/bootstrap-responsive.css')}}
     {{Asset::container('head')->styles()}}
@@ -31,12 +31,12 @@
 
   <body>
 
-    @include('forritun.navbar')
-    <div class="container">
-      <div class="logo">
-        {{HTML::image('img/forritunlogo.png', 'AWESOME logo', array('class' => 'heading'))}}
+    @include('navbar')
+    <div class="wrapper">
+      <div class="container main">
+        @include('notices')
+        @yield('main')
       </div>
-      @yield('main')
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     {{HTML::script('js/bootstrap.js')}}

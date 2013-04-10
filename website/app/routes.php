@@ -13,5 +13,10 @@
 
 Route::get('/', function()
 {
-	return View::make('main');
+	return View::make('login');
 });
+
+
+
+Route::controller('rooms','RoomController');
+Route::controller('classes','ClassController');
