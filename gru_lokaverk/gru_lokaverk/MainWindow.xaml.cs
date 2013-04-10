@@ -24,6 +24,8 @@ namespace gru_lokaverk
         {
             InitializeComponent();
         }
+
+
         
     }
 }

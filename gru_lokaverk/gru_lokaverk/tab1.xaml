@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="440" d:DesignWidth="880">
-
-    <Grid Name="WeekPlan" Height="440" Width="880" Background="LightSteelBlue" ShowGridLines="True" ></Grid>
+             d:DesignHeight="440" d:DesignWidth="884">
+    <Grid>
+        <Grid Name="WeekPlan" Height="440" Width="880" Background="LightSteelBlue" ShowGridLines="True" ></Grid>
+    </Grid>
 </UserControl>
