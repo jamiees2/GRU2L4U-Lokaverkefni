@@ -20,9 +20,9 @@ Tímar
       <tr>
           <td>{{$class_->id}}</td>
           <td>{{$class_->name}}</td>
-          <td>{{$class_->->description}}</td>
-          <td><a class="btn btn-primary" href="{{URL::action('ClassController@getEdit',array($room->id))}}">Edit</a></td>
-          <td><a class="btn btn-danger" href="{{URL::action('ClassController@getDelete',array($room->id))}}">Delete</a></td>
+          <td>{{$class_->description}}</td>
+          <td><a class="btn btn-primary" href="{{URL::action('ClassController@getEdit',array($class_->id))}}">Edit</a></td>
+          <td><a class="btn btn-danger" href="{{URL::action('ClassController@getDelete',array($class_->id))}}">Delete</a></td>
       </tr>
       @endforeach
     </table>
