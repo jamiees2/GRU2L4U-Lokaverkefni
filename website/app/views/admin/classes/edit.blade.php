@@ -6,7 +6,7 @@ Skrá inn
 @section('main')
 <h2>Breyta herbergi</h2>
 <br />
-<form method="post" accept-charset="utf8" action="{{URL::action('ClassController@postEdit')}}" class="form-horizontal">
+<form method="post" accept-charset="utf8" action="{{URL::action('ClassController@postEdit',array($class->id))}}" class="form-horizontal">
   <div class="control-group">
     <label class="control-label" for="name">Nafn</label>
     <div class="controls">
