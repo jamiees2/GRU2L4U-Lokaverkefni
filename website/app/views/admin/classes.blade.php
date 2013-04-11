@@ -26,7 +26,7 @@ Tímar
       </tr>
       @endforeach
     </table>
-    <a class="btn btn-primary" href="{{URL::action('ClassController@getNew')}}">Ný stofa</a>
+    <a class="btn btn-primary" href="{{URL::action('ClassController@getNew')}}">Nýr tími</a>
   </div>
 </div>
 @stop

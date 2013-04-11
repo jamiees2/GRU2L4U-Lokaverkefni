@@ -27,7 +27,7 @@ class RoomController extends BaseController {
 			->with('room',Room::find($id));
 	}
 
-	public function postDelete(){
+	public function postDelete($id){
 		Room::find($id)->delete();
 		return Redirect::action('RoomController@getIndex')
 			->with('success','Herbergi hent!');

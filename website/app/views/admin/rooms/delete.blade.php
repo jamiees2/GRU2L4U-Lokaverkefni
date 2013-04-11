@@ -6,7 +6,7 @@ Skrá inn
 @section('main')
 <h2>Eyða herbergi</h2>
 <br />
-<form method="post" accept-charset="utf8" action="{{URL::action('RoomController@postDelete')}}" class="form-horizontal">
+<form method="post" accept-charset="utf8" action="{{URL::action('RoomController@postDelete',array($room->id))}}" class="form-horizontal">
   <div class="span2">
     <button type="submit" class="btn btn-danger">Eyða</button>
   </div>

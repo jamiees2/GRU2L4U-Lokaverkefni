@@ -6,25 +6,17 @@ Skrá inn
 @section('main')
 <h2>Breyta herbergi</h2>
 <br />
-<form method="post" accept-charset="utf8" action="{{URL::action('RoomController@postEdit',array($room->id))}}" class="form-horizontal">
+<form method="post" accept-charset="utf8" action="{{URL::action('ClassController@postEdit')}}" class="form-horizontal">
   <div class="control-group">
-    <label class="control-label" for="name">Númer</label>
+    <label class="control-label" for="name">Nafn</label>
     <div class="controls">
-      <input type="text" name="number" id="number" placeholder="Númer" value="{{$room->number}}" required>
+      <input type="text" name="name" id="name" placeholder="Nafn" value="{{$class->name}}" required>
     </div>
   </div>
   <div class="control-group">
-    <label class="control-label" for="type">Tegund</label>
+    <label class="control-label" for="description">Lýsing</label>
     <div class="controls">
-      <select name="type" id="type">
-        @foreach($types as $type)
-        @if ($type->id == $room->type)
-          <option value="{{$type->id}}" selected>{{$type->description}}</option>
-        @else
-          <option value="{{$type->id}}">{{$type->description}}</option>
-        @endif
-        @endforeach
-      </select>
+      <textarea name="description" id="description" rows="6" cols="10">{{$class->description}}</textarea>
     </div>
   </div>
   <div class="control-group">

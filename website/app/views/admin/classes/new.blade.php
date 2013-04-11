@@ -4,23 +4,19 @@
 Skrá inn
 @stop
 @section('main')
-<h2>Breyta herbergi</h2>
+<h2>Nýtt herbergi</h2>
 <br />
-<form method="post" accept-charset="utf8" action="{{URL::action('RoomController@postNew')}}" class="form-horizontal">
+<form method="post" accept-charset="utf8" action="{{URL::action('ClassController@postNew')}}" class="form-horizontal">
   <div class="control-group">
-    <label class="control-label" for="name">Númer</label>
+    <label class="control-label" for="name">Nafn</label>
     <div class="controls">
-      <input type="text" name="number" id="number" placeholder="Númer" value="" required>
+      <input type="text" name="name" id="name" placeholder="Nafn" value="" required>
     </div>
   </div>
   <div class="control-group">
-    <label class="control-label" for="type">Tegund</label>
+    <label class="control-label" for="description">Lýsing</label>
     <div class="controls">
-      <select name="type" id="type">
-        @foreach($types as $type)
-        <option value="{{$type->id}}">{{$type->description}}</option>
-        @endforeach
-      </select>
+      <textarea name="description" id="description" rows="6" cols="10"></textarea>
     </div>
   </div>
   <div class="control-group">

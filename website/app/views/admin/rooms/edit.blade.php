@@ -8,7 +8,7 @@ Skrá inn
 <br />
 <form method="post" accept-charset="utf8" action="{{URL::action('RoomController@postEdit',array($room->id))}}" class="form-horizontal">
   <div class="control-group">
-    <label class="control-label" for="name">Númer</label>
+    <label class="control-label" for="number">Númer</label>
     <div class="controls">
       <input type="text" name="number" id="number" placeholder="Númer" value="{{$room->number}}" required>
     </div>
