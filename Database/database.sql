@@ -128,3 +128,6 @@ ADD Day_Number INT(8) NOT NULL,
 ADD CONSTRAINT FK_Day_Number FOREIGN KEY(Day_Number) REFERENCES ref_days(Day_Number),
 ADD Period_Number INT(11) NOT NULL, 
 ADD CONSTRAINT FK_Period_Number FOREIGN KEY(Period_Number) REFERENCES ref_periods(Period_Number);
+
+ALTER TABLE classes ADD UNIQUE (name);
+ALTER TABLE rooms ADD UNIQUE (number);

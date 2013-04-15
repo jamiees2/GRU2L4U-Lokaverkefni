@@ -9,21 +9,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
 
 namespace gru_lokaverk
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for classes_edit.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class classes_edit : Window
     {
-        public MainWindow()
+        public classes_edit()
         {
             InitializeComponent();
-            
+        }
+
+        private void btn_Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

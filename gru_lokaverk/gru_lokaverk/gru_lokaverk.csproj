@@ -58,10 +58,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="classes_edit.xaml.cs">
+      <DependentUpon>classes_edit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="sql.cs" />
     <Compile Include="tab1.xaml.cs">
       <DependentUpon>tab1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="tab2.xaml.cs">
+      <DependentUpon>tab2.xaml</DependentUpon>
+    </Compile>
+    <Page Include="classes_edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,6 +85,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="tab1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="tab2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

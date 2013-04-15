@@ -36,6 +36,8 @@ Kort
 Annir
 Conflict Resolution
 
+c# minimize to tray
+
 Heimasida: Responsive i simum thannig ad bara dagurinn i dag birtist a adalsidunni (svo er haegt ad fara i alla viku)
 
 Breyta logo � vefs��u (mynd � tabinu)

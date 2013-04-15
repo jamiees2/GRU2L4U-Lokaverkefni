@@ -45,10 +45,12 @@ namespace gru_lokaverk
             this.WeekPlan.RowDefinitions.Clear();
 
             List<string> weekDays = new List<string>();
+            List<string> time = new List<string>();
             string[] days = new string[8];
             try
             {
                 weekDays = database.getDays();
+                time = database.getTime();
                 counter = 0;
                 foreach (string item in weekDays)//Gets the weekdays from the database and puts them into an array.
                 {
@@ -60,11 +62,6 @@ namespace gru_lokaverk
                 for (int j = 0; j < 8; j++)//Sets Columns
                 {
                     this.WeekPlan.ColumnDefinitions.Add(new ColumnDefinition());
-                    //Label week = new Label(); week.Content = days[j];//Weekdays
-
-                    //Grid.SetRow(week, 0);
-                    //Grid.SetColumn(week, j+1);
-                    //this.WeekPlan.Children.Add(week);
 
                     for (int i = 0; i < 15; i++)//Sets rows
                     {
@@ -73,13 +70,24 @@ namespace gru_lokaverk
                         btn_grid[counter].Height = 29;
                         this.WeekPlan.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto});
 
+
+
+                        //Adds days to the week
                         if ((counter)%15==0 && counter>5)
                         {
                             content = days[j-1];
                         }
+                        //Adds the time to the schedule
+                        if (counter>0 && counter<15)
+                        {
+                            string[] tempArray = new string[5];
+                            char split = ';';
+                            tempArray = time[counter].Split(split);
+                            content = tempArray[1] + " - " + tempArray[2];
+                        }
 
-                        btn_grid[counter].Content = content + counter ;
                         btn_grid[counter].TabIndex = counter;
+                        btn_grid[counter].Content = content;// +counter;//Adds number to the fields
 
                         Grid.SetRow(btn_grid[counter], i);
                         Grid.SetColumn(btn_grid[counter], j);
@@ -98,6 +106,7 @@ namespace gru_lokaverk
 
         void tab1_Click(object sender, RoutedEventArgs e)
         {
+            
             Button tmpButton = (Button)sender;
             tmpButton.Background = Brushes.Blue;
             if (tmpButton.TabIndex==4)
