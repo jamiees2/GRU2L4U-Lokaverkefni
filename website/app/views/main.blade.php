@@ -26,6 +26,7 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="/ico/favicon.ico">
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     {{Asset::container('head')->scripts()}}
   </head>
 
@@ -38,7 +39,7 @@
         @yield('main')
       </div>
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
     {{HTML::script('js/bootstrap.js')}}
     {{Asset::container('footer')->scripts()}}
   </body>

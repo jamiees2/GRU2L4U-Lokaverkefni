@@ -20,3 +20,4 @@ Route::get('/', function()
 
 Route::controller('rooms','RoomController');
 Route::controller('classes','ClassController');
+Route::controller('timetable','TimetableController');

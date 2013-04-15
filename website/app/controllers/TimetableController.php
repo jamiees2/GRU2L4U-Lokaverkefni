@@ -3,9 +3,22 @@
 class TimetableController extends BaseController {
 	public function getIndex(){
 		//Return all the rows of the timetable
+		/*
+		dd(Period::with(array('timetable' => function($query){
+			$query->whereRoomID(1);
+		},'timetable.day','timetable.class_','timetable.room'))->get());*/
+		return View::make('admin.timetable')
+			->with('timetable',
+				Timetable::with('room','class_','user','day','period')
+				->whereRoomID(1)
+				->groupBy('Day_Number')
+				->orderBy('Period_Number')
+				->get())
+			->with('days',Day::all())
+			->with('periods',Period::all());
 	}
 
-	public function getNew(){
+	public function getNew($day_id,$period_id){
 		//Return a view to make a new time assignment
 	}
 
@@ -19,22 +32,14 @@ class TimetableController extends BaseController {
 	}
 
 	public function postDelete(){
-		Class_::find($id)->delete();
-		return Redirect::action('ClassController@getIndex')
-			->with('success','Tíma hent!');
+		//Delete the entry
 	}
 
 	public function getEdit($id){
-		return View::make('admin.classes.edit')
-			->with('room',Class_::find($id));
+		//Return a view edit
 	}
 
 	public function postEdit($id){
-		$room = Class_::find($id);
-		$room->name = Input::get('name');
-		$room->description = Input::get('description');
-		$room->save();
-		return Redirect::action('ClassController@getIndex')
-			->with('success','Tími vistaður!');
+		//Save timetable edit
 	}
 }
