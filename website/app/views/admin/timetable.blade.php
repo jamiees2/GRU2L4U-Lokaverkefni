@@ -4,32 +4,53 @@
 Herbergi
 @stop
 @section('main')
-<h2>Stofa 631</h2>
+<h2>@if(isset($room))Stofa {{$room->number}}@else{{$class->name}}@endif</h2>
 <br />
 
 <ul class="nav nav-tabs" id="timetable">
-  @foreach($days as $day)
-    <li><a href="#{{$day->Day_Number}}" data-toggle="tab">{{$day->Day_Name}}</a></li>
+  @foreach($groups as $key => $group)
+    <li><a href="#{{md5($key)}}" data-toggle="tab">{{$key}}</a></li>
   @endforeach
 </ul>
 <div class="tab-content">
-  @foreach($days as $day)
-  <div class="tab-pane" id="{{$day->Day_Number}}">
+  @foreach($groups as $key => $group)
+  <div class="tab-pane" id="{{md5($key)}}">
     <div class="row-fluid">
       <div class="span12">
         <table class="table">
           <thead>
             <tr>
               <th width="10%" data-hide="phone,tablet">Tími</th>
-              <th>New</th>
+              <th width="10%">Stofa</th>
+              <th>Áfangi</th>
+              <th>Aðgerð</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($periods as $period)
+            @foreach($group as $item)
             <tr>
-              <td>{{$period->Period_start_time}} - {{$period->Period_End_time}}</td>
+              <td>{{$item->period->start_time}} - {{$item->period->end_time}}</td>
               <td>
-                <a href="{{URL::action('TimetableController@getNew',array($day->Day_Number,$period->Period_Number))}}" class="btn btn-primary btn-small">New</a>
+                @if($item->timetable)
+                {{$item->timetable->room->number}}
+                @elseif(isset($room))
+                {{$room->number}}
+                @endif
+              </td>
+              <td>
+                @if($item->timetable)
+                {{$item->timetable->class_->name}}
+                @elseif(isset($class))
+                {{$class->name}}
+                @endif
+              </td>
+
+              <td>
+                @if($item->timetable)
+                <a href="{{URL::action('TimetableController@getNew')}}" class="btn btn-primary btn-small">Breyta</a>
+                @else
+                <a href="{{URL::action('TimetableController@getNew')}}" class="btn btn-primary btn-small">Skrá</a>
+                @endif
               </td>
             </tr>
             @endforeach

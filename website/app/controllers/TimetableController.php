@@ -1,30 +1,61 @@
 <?php
 
 class TimetableController extends BaseController {
-	public function getIndex(){
-		//Return all the rows of the timetable
-		/*
-		dd(Period::with(array('timetable' => function($query){
-			$query->whereRoomID(1);
-		},'timetable.day','timetable.class_','timetable.room'))->get());*/
-		return View::make('admin.timetable')
-			->with('timetable',
-				Timetable::with('room','class_','user','day','period')
-				->whereRoomID(1)
-				->groupBy('Day_Number')
-				->orderBy('Period_Number')
-				->get())
-			->with('days',Day::all())
-			->with('periods',Period::all());
+	public function getByroom($id){
+		//Return all the rows of the timetable by room
+		
+		$data = DayPeriod::with(array(
+			'day','period','timetable' => function($query) use ($id)
+			{
+				$query->whereRoomID($id);
+			}
+			,'timetable.room','timetable.class_'))
+			->get();
+		$groups = array();
+		foreach ($data as $item) {
+			if (isset($groups[$item->day->name]))
+				$groups[$item->day->name][] = $item;
+			else 
+				$groups[$item->day->name] = array($item);
+		}
+		//dd($groups['Mánudagur']);
+		return View::make('admin.timetable.byroom')
+			->with('groups',$groups)
+			->with('room',Room::find($id))
+			->with('classes',Class_::all())
+			->with('rooms',Room::all());
 	}
 
-	public function getNew($day_id,$period_id){
-		//Return a view to make a new time assignment
+	public function getByclass($id){
+		//Return all the rows of the timetable by room
+		$data = DayPeriod::with(array(
+			'day','period','timetable' => function($query) use ($id){
+				$query->whereClassID($id);
+			}
+			,'timetable.room','timetable.class_'))
+			->get();
+		$groups = array();
+		foreach ($data as $item) {
+			if (isset($groups[$item->day->name]))
+				$groups[$item->day->name][] = $item;
+			else 
+				$groups[$item->day->name] = array($item);
+		}
+		//dd($groups['Mánudagur']);
+		return View::make('admin.timetable')
+			->with('groups',$groups)
+			->with('class',Class_::find($id));
 	}
 
 	public function postNew(){
 		//Create a new row in the timetable
-
+		$entry = new Timetable;
+		$entry->class_id = Input::get('class');
+		$entry->room_id = Input::get('room');
+		$entry->users_id = 1;
+		$entry->day_period_id = Input::get('day');
+		$entry->save();
+		return Redirect::back();
 	}
 
 	public function getDelete($id){
@@ -35,11 +66,17 @@ class TimetableController extends BaseController {
 		//Delete the entry
 	}
 
-	public function getEdit($id){
-		//Return a view edit
-	}
-
-	public function postEdit($id){
+	public function postEdit(){
 		//Save timetable edit
+		if(Input::has('id'))
+		{
+			$entry = Timetable::find(Input::get('id'));
+			if (Input::has('class'))
+				$entry->class_id = Input::get('class');
+			if (Input::has('room'))
+				$entry->room_id = Input::get('room');
+			$entry->save();
+		}
+		return Redirect::back();
 	}
 }
