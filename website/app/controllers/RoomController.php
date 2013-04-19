@@ -2,6 +2,8 @@
 
 class RoomController extends BaseController {
 	public function getIndex(){
+		Asset::container('footer')->add('footable','js/footable-0.1.js');
+		Asset::container('head')->add('footable','css/footable-0.1.css');
 		return View::make('admin.rooms')
 			->with('rooms',Room::with('type_')->get());
 	}

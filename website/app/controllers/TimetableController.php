@@ -19,6 +19,7 @@ class TimetableController extends BaseController {
 			else 
 				$groups[$item->day->name] = array($item);
 		}
+		//dd($groups['Mánudagur']);
 		return View::make('admin.timetable.byroom')
 			->with('groups',$groups)
 			->with('room',Room::find($id))
@@ -38,7 +39,7 @@ class TimetableController extends BaseController {
 		foreach ($data as $item) {
 			if (isset($groups[$item->day->name]))
 				$groups[$item->day->name][] = $item;
-			else 
+			else
 				$groups[$item->day->name] = array($item);
 		}
 		//dd($groups['Mánudagur']);

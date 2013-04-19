@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', function()
+//Rótin á síðunni
+Route::get('/','RoomController@getIndex');
+
+Route::get('/login', function()
 {
 	return View::make('login');
 });

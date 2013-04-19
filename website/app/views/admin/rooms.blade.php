@@ -1,28 +1,28 @@
 @extends('main')
 
 @section('title')
-Herbergi
+Stofur
 @stop
 @section('main')
-<h2>Herbergi</h2>
+<h2>Stofur</h2>
 <br />
 <div class="row-fluid">
     <div class="span12">
-      <table class="table">
+      <table class="table footable">
         <thead>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Edit</th>
-          <th>Delete</th>
+          <th data-class="expand">Tafla</th>
+          <th>Nafn</th>
+          <th data-hide="phone,tablet">Lýsing</th>
+          <th data-hide="phone,tablet">Breyta</th>
+          <th data-hide="phone,tablet">Henda</th>
       </thead>
       @foreach($rooms as $room)
       <tr>
-          <td>{{$room->id}}</td>
+          <td><a class="btn btn-small btn-primary" href="{{URL::action('TimetableController@getByroom',array($room->id))}}">Tafla stofu</a></td>
           <td>{{$room->number}}</td>
           <td>{{$room->type_->description}}</td>
-          <td><a class="btn btn-primary" href="{{URL::action('RoomController@getEdit',array($room->id))}}">Edit</a></td>
-          <td><a class="btn btn-danger" href="{{URL::action('RoomController@getDelete',array($room->id))}}">Delete</a></td>
+          <td><a class="btn btn-small btn-primary" href="{{URL::action('RoomController@getEdit',array($room->id))}}">Edit</a></td>
+          <td><a class="btn btn-small btn-danger" href="{{URL::action('RoomController@getDelete',array($room->id))}}">Delete</a></td>
       </tr>
       @endforeach
     </table>

@@ -20,7 +20,7 @@ Herbergi
         <table class="table footable">
           <thead>
             <tr>
-              <th width="10%" data-class="expand">Tími</th>
+              <th width="20%" data-class="expand">Tími</th>
               <th width="10%" data-hide="phone,tablet">Stofa</th>
               <th>Áfangi</th>
               <th data-hide="phone,tablet">Aðgerð</th>
@@ -34,6 +34,7 @@ Herbergi
                 {{$room->number}}
               </td>
               @if($item->timetable)
+              
               <td data-class="{{$item->timetable->class_->id}}">
                 {{$item->timetable->class_->name}}
               </td>

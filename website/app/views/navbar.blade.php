@@ -13,7 +13,8 @@
             Navbar::render(
               array(
                 'Heim' => '/', 
-                'Link' => '/'
+                'Áfangar' => '/classes',
+                'Stofur' => '/rooms'
               )
             )
           }}
