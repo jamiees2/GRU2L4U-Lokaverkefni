@@ -17,19 +17,19 @@ Herbergi
   <div class="tab-pane" id="{{md5($key)}}">
     <div class="row-fluid">
       <div class="span12">
-        <table class="table">
+        <table class="table footable">
           <thead>
             <tr>
-              <th width="10%" data-hide="phone,tablet">Tími</th>
-              <th width="10%">Stofa</th>
+              <th width="10%" data-class="expand">Tími</th>
+              <th width="10%" data-hide="phone,tablet">Stofa</th>
               <th>Áfangi</th>
-              <th>Aðgerð</th>
+              <th data-hide="phone,tablet">Aðgerð</th>
             </tr>
           </thead>
           <tbody>
             @foreach($group as $item)
             <tr data-day="{{$item->id}}">
-              <td>{{$item->period->start_time}} - {{$item->period->end_time}}</td>
+              <td>{{$item->period->start_time}}-{{$item->period->end_time}}</td>
               <td>
                 {{$room->number}}
               </td>
@@ -40,6 +40,7 @@ Herbergi
               @else
               <td></td>
               @endif
+
               <td>
                 @if($item->timetable)
                 <button data-id="{{$item->timetable->id}}" type="button"data-toggle="modal" data-target="#edit" class="edit btn btn-primary btn-small">Breyta</button>
@@ -129,6 +130,12 @@ Herbergi
     });
     $('.new').on('click',function(){
       $('#new-day').val($(this).parent().parent().attr('data-day'));
+    });
+    $('#timetable a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    }).on('shown', function (e) { 
+      $('.tab-pane.active table').trigger('footable_resize');
     });
   });
 </script>
