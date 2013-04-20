@@ -20,18 +20,24 @@
           }}
         </ul>
         <ul class="nav pull-right">
-        
+          @if(Auth::guest())
           {{
             Navbar::render(
               array(
-                'Skrá inn' => array(
-                  'Skrá inn' => '#',
-                ), 
-                'Nýskrá' => '#'
+                'Skrá inn' => '/login'
+                
               )
             )
           }}
-        
+          @else
+          {{
+            Navbar::render(
+              array(
+                'Skrá út' => '/logout'
+              )
+            )
+          }}
+          @endif
         </ul>
       </div>
     </div>

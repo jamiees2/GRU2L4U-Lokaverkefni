@@ -19,6 +19,26 @@ Route::get('/login', function()
 	return View::make('login');
 });
 
+Route::post('/login',function(){
+	$user = array(
+		'username' => Input::get('username'),
+		'password' => Input::get('password'),
+	);
+	if (Auth::attempt($user, Input::has('remember'))) {
+        return Redirect::to('/')
+            ->with('success', 'Þú ert skráður inn');
+    }
+    else
+    	return Redirect::back()
+    		->with('error','Innskráning mistókst, vinsamlegast reyndu aftur');
+});
+
+Route::get('/logout',function(){
+	Auth::logout();
+	return Redirect::to('/')
+		->with('success','Útskráning tókst');
+})->before('auth');
+
 
 
 Route::controller('rooms','RoomController');

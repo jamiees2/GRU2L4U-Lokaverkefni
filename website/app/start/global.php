@@ -65,3 +65,12 @@ App::error(function(Exception $exception, $code)
 */
 
 require __DIR__.'/../filters.php';
+
+use Illuminate\Auth\Guard;
+
+Auth::extend('user_auth',function(){
+	return new Guard(
+		new UserProvider(),
+		App::make('session')
+	);
+});
