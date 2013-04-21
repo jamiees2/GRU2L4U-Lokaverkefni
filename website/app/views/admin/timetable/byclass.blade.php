@@ -17,26 +17,29 @@ Herbergi
   <div class="tab-pane" id="{{md5($key)}}">
     <div class="row-fluid">
       <div class="span12">
-        <table class="table">
+        <table class="table footable">
           <thead>
             <tr>
-              <th width="10%" data-hide="phone,tablet">Tími</th>
-              <th width="10%">Stofa</th>
+              <th width="20%" data-class="expand">Tími</th>
+              <th width="10%" data-hide="phone,tablet">Stofa</th>
               <th>Áfangi</th>
               @if(Auth::check())
-              <th>Aðgerð</th>
+              <th data-hide="phone,tablet">Aðgerð</th>
               @endif
             </tr>
           </thead>
           <tbody>
             @foreach($group as $item)
-            <tr>
+            <tr data-day="{{$item->id}}">
               <td>{{$item->period->start_time}} - {{$item->period->end_time}}</td>
-              <td>
-                @if($item->timetable)
+
+              @if($item->timetable)
+              <td data-class="{{$item->timetable->room->id}}">
                 {{$item->timetable->room->number}}
-                @endif
               </td>
+              @else
+              <td></td>
+              @endif
               <td>
                 @if($item->timetable)
                 {{$item->timetable->class_->name}}
@@ -62,10 +65,16 @@ Herbergi
 </div>
 @if(Auth::check())
   @include('admin.timetable.byclass.forms')
-  @endif
-<script>
-  $(function () {
+@endif
+ <script>
+  $(function(){
     $('#timetable a:first').tab('show');
+    $('#timetable a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    }).on('shown', function (e) { 
+      $('.tab-pane.active table').trigger('footable_resize');
+    });
   });
-</script>
+  </script>
 @stop

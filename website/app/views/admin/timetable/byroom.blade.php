@@ -36,7 +36,6 @@ Herbergi
                 {{$room->number}}
               </td>
               @if($item->timetable)
-              
               <td data-class="{{$item->timetable->class_->id}}">
                 {{$item->timetable->class_->name}}
               </td>

@@ -57,10 +57,13 @@ class TimetableController extends BaseController {
 		$entry = new Timetable;
 		$entry->class_id = Input::get('class');
 		$entry->room_id = Input::get('room');
-		$entry->users_id = 1;
+		$entry->users_id = Auth::user()->id;
 		$entry->day_period_id = Input::get('day');
-		$entry->save();
-		return Redirect::back();
+		if($entry->save());
+			return Redirect::back()
+				->with('success','Stofa skráð!');
+		return Redirect::back()
+			->with('error','Stofa ekki skráð!');
 	}
 
 	public function getDelete($id){
@@ -81,7 +84,11 @@ class TimetableController extends BaseController {
 			if (Input::has('room'))
 				$entry->room_id = Input::get('room');
 			$entry->save();
+
+			return Redirect::back()
+				->with('success','Stofu breytt!');
 		}
-		return Redirect::back();
-	}
+		return Redirect::back()
+			->with('error','Stofu ekki breytt')
+;	}
 }

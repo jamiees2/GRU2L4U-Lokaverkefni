@@ -13,9 +13,9 @@
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label" for="class">Áfangi</label>
+          <label class="control-label" for="edit-select-class">Áfangi</label>
           <div class="controls">
-            <select id="edit-select-class" name="class" id="class">
+            <select id="edit-select-class" name="class">
               @foreach($classes as $c)
               <option value="{{$c->id}}">{{$c->name}}</option>
               @endforeach
@@ -45,9 +45,9 @@
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label" for="class">Áfangi</label>
+          <label class="control-label" for="new-select-class">Áfangi</label>
           <div class="controls">
-            <select id="new-select-class" name="class" id="class">
+            <select id="new-select-class" name="class">
               @foreach($classes as $c)
               <option value="{{$c->id}}">{{$c->name}}</option>
               @endforeach

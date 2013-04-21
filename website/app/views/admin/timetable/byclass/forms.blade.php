@@ -3,13 +3,13 @@
     <input type="hidden" value="" name="id" id="edit-id" />
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h3 id="header">Breyta áfanga</h3>
+      <h3 id="header">Breyta stofu</h3>
     </div>
     <div class="modal-body">
         <div class="control-group">
-          <label class="control-label">Stofa</label>
+          <label class="control-label" for="edit-select-room">Stofa</label>
           <div class="controls">
-            <select id="edit-select-room">
+            <select id="edit-select-room" name="room">
               @foreach($rooms as $r)
               <option value="{{$r->id}}">{{$r->number}}</option>
               @endforeach
@@ -29,19 +29,21 @@
     </div>
     </form>
   </div>
+
+  {{--New Form--}}
   <div id="new" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="header" aria-hidden="true">
     <form id="new-form" class="form-horizontal" method="POST" action="{{URL::action('TimetableController@postNew');}}">
-    <input type="hidden" value="{{$class->id}}" name="class" id="new-clas" />
+    <input type="hidden" value="{{$class->id}}" name="class" id="new-class" />
     <input type="hidden" value="" name="day" id="new-day" />
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h3 id="header">Skrá áfanga</h3>
+      <h3 id="header">Skrá stofu</h3>
     </div>
     <div class="modal-body">
         <div class="control-group">
-          <label class="control-label">Stofa</label>
+          <label class="control-label" for="new-select-room">Stofa</label>
           <div class="controls">
-            <select id="edit-select-room">
+            <select id="edit-select-room" name="room">
               @foreach($rooms as $r)
               <option value="{{$r->id}}">{{$r->number}}</option>
               @endforeach
@@ -65,8 +67,8 @@
 <script>
   $(function () {
     $('.edit').on('click',function(){
-      var class_id = $(this).parent().prev().attr('data-class');
-      $('#edit-select-class').val(class_id);
+      var room_id = $(this).parent().prev().attr('data-room');
+      $('#edit-select-room').val(room_id);
       $('#edit-id').val($(this).attr('data-id'));
     });
     $('.new').on('click',function(){
