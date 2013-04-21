@@ -12,9 +12,8 @@
           {{
             Navbar::render(
               array(
-                'Heim' => '/', 
+                'Stofur' => '/', 
                 'Áfangar' => '/classes',
-                'Stofur' => '/rooms'
               )
             )
           }}

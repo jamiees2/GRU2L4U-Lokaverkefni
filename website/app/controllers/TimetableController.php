@@ -29,6 +29,8 @@ class TimetableController extends BaseController {
 
 	public function getByclass($id){
 		//Return all the rows of the timetable by room
+		Asset::container('footer')->add('footable','js/footable-0.1.js');
+		Asset::container('head')->add('footable','css/footable-0.1.css');
 		$data = DayPeriod::with(array(
 			'day','period','timetable' => function($query) use ($id){
 				$query->whereClassID($id);
@@ -43,9 +45,11 @@ class TimetableController extends BaseController {
 				$groups[$item->day->name] = array($item);
 		}
 		//dd($groups['Mánudagur']);
-		return View::make('admin.timetable')
+		return View::make('admin.timetable.byclass')
 			->with('groups',$groups)
-			->with('class',Class_::find($id));
+			->with('class',Class_::find($id))
+			->with('classes',Class_::all())
+			->with('rooms',Room::all());
 	}
 
 	public function postNew(){

@@ -31,7 +31,7 @@ Route::post('/login',function(){
     else
     	return Redirect::back()
     		->with('error','Innskráning mistókst, vinsamlegast reyndu aftur');
-});
+})->before('guest');
 
 Route::get('/logout',function(){
 	Auth::logout();

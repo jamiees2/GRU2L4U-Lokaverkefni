@@ -3,11 +3,13 @@
 class Navbar{
 	public static function render($data){
 		$output = "";
+		$url = substr(URL::current(),strlen(Request::root()));
+		if(empty($url)) $url = '/';
 		foreach ($data as $k => $v){
 			$output .= '<li ';
 			if (is_array($v)){
 				$output .= 'class="';
-				if (in_array(substr(URL::current(),strlen(Request::root())),$v))
+				if (in_array($url,$v))
 					$output .= 'active ';
 				$output .= 'dropdown">';
 				$output .= '<a href="#" class="dropdown-toggle" data-toggle="dropdown">';
@@ -23,7 +25,7 @@ class Navbar{
 			}
 			else
 			{
-				if (substr(URL::current(),strlen(Request::root())) === $v) 
+				if ($url === $v) 
 					$output .= 'class="active"';
 				$output .= '><a href="' . $v . '">' . $k . '</a>';
 			}
