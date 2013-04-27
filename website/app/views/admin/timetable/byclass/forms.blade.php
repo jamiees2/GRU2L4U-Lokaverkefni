@@ -24,6 +24,8 @@
         </div>
     </div>
     <div class="modal-footer">
+
+      <a href="#" id="edit-delete" class="btn btn-danger pull-left">Eyða</a>
       <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">Loka</button>
       <button type="submit" class="btn btn-primary" id="edit-save">Vista breytingar</button>
     </div>
@@ -59,21 +61,8 @@
     </div>
     <div class="modal-footer">
       <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">Loka</button>
-      <button type="submit" class="btn btn-primary" id="new-save">Vista breytingar</button>
+      <button type="submit" class="btn btn-primary" id="new-save">Skrá stofu</button>
     </div>
     </form>
   </div>
 </div>
-<script>
-  $(function () {
-    $('.edit').on('click',function(){
-      var room_id = $(this).parent().prev().attr('data-room');
-      $('#edit-select-room').val(room_id);
-      $('#edit-id').val($(this).attr('data-id'));
-    });
-    $('.new').on('click',function(){
-      $('#new-day').val($(this).parent().parent().attr('data-day'));
-    });
-    
-  });
-</script>

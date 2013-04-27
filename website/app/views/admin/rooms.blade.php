@@ -8,10 +8,13 @@ Stofur
 <br />
 <div class="row-fluid">
     <div class="span12">
-      <table class="table footable">
+      <form class="form-search">
+        <input id="filter" type="text" placeholder="Leit" class="input-medium search-query"/>
+      </form>
+      <table data-filter="#filter"  class="table footable">
         <thead>
           <th data-class="expand">Tafla</th>
-          <th>Nafn</th>
+          <th data-sort-initial="true" data-type="numeric">Nafn</th>
           <th data-hide="phone,tablet">Lýsing</th>
           @if(Auth::check())
           <th data-hide="phone,tablet">Breyta</th>

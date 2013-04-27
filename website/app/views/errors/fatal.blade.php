@@ -1,20 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>@yield('title')</title>
+    <title>500 - Hrikaleg bilun!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Le styles -->
-    {{HTML::style('css/bootstrap.css')}}
-    {{HTML::style('css/style.css')}}
-    <style>
-      
-    </style>
-    {{ HTML::style('css/bootstrap-responsive.css')}}
-    {{Asset::container('head')->styles()}}
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.css">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -26,19 +22,23 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="/ico/favicon.ico">
-     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    {{Asset::container('head')->scripts()}}
   </head>
 
   <body>
 
-    @include('navbar')
     <div class="container main">
-      @include('notices')
-      @yield('main')
+      <div class="hero-unit">
+        <h1>500 - Hrikaleg bilun</h1>
+        <p>Því miður bilaði vefþjónninn hjá okkur alveg. Engar áhyggjur, sá sem olli þessu hefur verið rekinn.</p>
+        <p>
+          <a class="btn btn-primary btn-large" href="/">
+            Fara aftur á síðurót
+          </a>
+          <a class="btn btn-success btn-large" onclick="window.location.reload(); return false;">
+            Reyna aftur
+          </a>
+        </p>
+      </div>
     </div>
-    
-    {{HTML::script('js/bootstrap.js')}}
-    {{Asset::container('footer')->scripts()}}
   </body>
 </html>

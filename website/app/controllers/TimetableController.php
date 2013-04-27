@@ -1,6 +1,12 @@
 <?php
 
+
 class TimetableController extends BaseController {
+
+	public function __construct(){
+		$this->beforeFilter('auth', array('only' =>
+                            array('postNew', 'getDelete','postEdit')));
+	}
 	public function getByroom($id){
 		//Return all the rows of the timetable by room
 		Asset::container('footer')->add('footable','js/footable-0.1.js');
@@ -67,11 +73,10 @@ class TimetableController extends BaseController {
 	}
 
 	public function getDelete($id){
-		//Return a view to verify deletion
-	}
-
-	public function postDelete(){
-		//Delete the entry
+		//Delete the action
+		Timetable::find($id)->delete();
+		return Redirect::back()
+			->with('success','Skráningu hent');
 	}
 
 	public function postEdit(){
