@@ -4,7 +4,7 @@
 Skrá inn
 @stop
 @section('main')
-<h2>Eyða herbergi</h2>
+<h2>Eyða stofu</h2>
 <br />
 <form method="post" accept-charset="utf8" action="{{URL::action('ClassController@postDelete',array($class->id))}}" class="form-horizontal">
   <div class="span2">

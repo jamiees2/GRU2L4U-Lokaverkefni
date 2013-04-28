@@ -4,7 +4,7 @@
 Skrá inn
 @stop
 @section('main')
-<h2>Breyta herbergi</h2>
+<h2>Breyta stofu</h2>
 <br />
 <form method="post" accept-charset="utf8" action="{{URL::action('ClassController@postEdit',array($class->id))}}" class="form-horizontal">
   <div class="control-group">

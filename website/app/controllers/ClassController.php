@@ -23,12 +23,14 @@ class ClassController extends BaseController {
 
 	public function postNew(){
 		$room = new Class_;
-		$room->name = Input::get('name');
-		$room->description = Input::get('description');
-		$room->save();
-
-		return Redirect::action('ClassController@getIndex')
-			->with('success','Tími skráður!');
+		$room->name = HTML::entities(Input::get('name'));
+		$room->description = HTML::entities(Input::get('description'));
+		if($room->save())
+			return Redirect::action('ClassController@getIndex')
+				->with('success','Tími skráður!');
+		else 
+			return Redirect::back()
+				->with('error','Gekk ekki að nýskrá tíma!');
 
 	}
 
@@ -50,10 +52,13 @@ class ClassController extends BaseController {
 
 	public function postEdit($id){
 		$room = Class_::find($id);
-		$room->name = Input::get('name');
-		$room->description = Input::get('description');
-		$room->save();
-		return Redirect::action('ClassController@getIndex')
-			->with('success','Tími vistaður!');
+		$room->name = HTML::entities(Input::get('name'));
+		$room->description = HTML::entities(Input::get('description'));
+		if($room->save())
+			return Redirect::action('ClassController@getIndex')
+				->with('success','Tími vistaður!');
+		else 
+			return Redirect::back()
+				->with('error','Gekk ekki að vista tíma!');
 	}
 }

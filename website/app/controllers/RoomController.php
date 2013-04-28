@@ -7,7 +7,7 @@ class RoomController extends BaseController {
                             	'getDelete','postDelete',
                             	'getEdit','postEdit')));
 	}
-	
+
 	public function getIndex(){
 		Asset::container('footer')->add('footable','js/footable-0.1.js');
 		Asset::container('footer')->add('footable-sortable','js/footable.sortable.js');
@@ -25,12 +25,14 @@ class RoomController extends BaseController {
 
 	public function postNew(){
 		$room = new Room;
-		$room->number = Input::get('number');
-		$room->type = Input::get('type');
-		$room->save();
-
-		return Redirect::action('RoomController@getIndex')
-			->with('success','Herbergi skráð!');
+		$room->number = HTML::entities(Input::get('number'));
+		$room->type = HTML::entities(Input::get('type'));
+		if ($room->save())
+			return Redirect::action('RoomController@getIndex')
+				->with('success','Stofa skráð!');
+		else
+			return Redirect::back()
+				->with('error','Gekk ekki að nýskrá stofu!');
 
 	}
 
@@ -53,10 +55,13 @@ class RoomController extends BaseController {
 
 	public function postEdit($id){
 		$room = Room::find($id);
-		$room->number = Input::get('number');
-		$room->type = Input::get('type');
-		$room->save();
-		return Redirect::action('RoomController@getIndex')
-			->with('success','Herbergi vistað!');
+		$room->number = HTML::entities(Input::get('number'));
+		$room->type = HTML::entities(Input::get('type'));
+		if ($room->save())
+			return Redirect::action('RoomController@getIndex')
+				->with('success','Herbergi vistað!');
+		else
+			return Redirect::back()
+				->with('error','Gekk ekki að nýskrá stofu!');
 	}
 }

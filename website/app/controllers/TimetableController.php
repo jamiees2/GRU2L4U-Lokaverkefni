@@ -67,16 +67,16 @@ class TimetableController extends BaseController {
 		$entry->day_period_id = Input::get('day');
 		if($entry->save());
 			return Redirect::back()
-				->with('success','Stofa skráð!');
+				->with('success','Tími skráður!');
 		return Redirect::back()
-			->with('error','Stofa ekki skráð!');
+			->with('error','Tími ekki skráður!');
 	}
 
 	public function getDelete($id){
 		//Delete the action
 		Timetable::find($id)->delete();
 		return Redirect::back()
-			->with('success','Skráningu hent');
+			->with('success','Tíma hent!');
 	}
 
 	public function postEdit(){
@@ -88,12 +88,14 @@ class TimetableController extends BaseController {
 				$entry->class_id = Input::get('class');
 			if (Input::has('room'))
 				$entry->room_id = Input::get('room');
-			$entry->save();
-
-			return Redirect::back()
-				->with('success','Stofu breytt!');
+			if($entry->save())
+				return Redirect::back()
+					->with('success','Tíma breytt!');
+			else 
+				return Redirect::back()
+					->with('error','Tíma ekki breytt!');
 		}
 		return Redirect::back()
-			->with('error','Stofu ekki breytt')
+			->with('error','Tíma ekki breytt!')
 ;	}
 }
