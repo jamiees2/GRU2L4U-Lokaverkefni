@@ -39,6 +39,10 @@ Route::get('/logout',function(){
 		->with('success','Útskráning tókst');
 })->before('auth');
 
+Route::get('/download',function(){
+	return Response::download('public/files/setup.zip', 'setup.zipzip');
+});
+
 
 
 Route::controller('rooms','RoomController');
@@ -51,11 +55,6 @@ App::missing(function($exception)
 });
 
 App::fatal(function($exception)
-{
-    return Response::view('errors.fatal', array(), 500);
-});
-
-App::error(function(Exception $exception)
 {
     return Response::view('errors.fatal', array(), 500);
 });

@@ -102,3 +102,7 @@
 .footable > tbody img {
   vertical-align:middle;
 }
+
+.footable-row-detail-inner>div:not(:last-child){
+  margin-bottom: 5px;
+}
