@@ -13,8 +13,8 @@ Tímar
       </form>
       <table data-filter="#filter" class="table footable">
         <thead>
-          <th data-hide="phone">Tafla</th>
-          <th data-class="expand" data-sort-initial="true">Nafn</th>
+          <th data-class="expand" data-hide="phone">Tafla</th>
+          <th data-sort-initial="true">Nafn</th>
           <th data-hide="phone">Lýsing</th>
           @if(Auth::check())
           <th data-hide="phone,tablet">Breyta</th>

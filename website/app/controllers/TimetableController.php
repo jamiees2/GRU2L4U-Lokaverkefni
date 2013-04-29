@@ -63,7 +63,7 @@ class TimetableController extends BaseController {
 		$entry = new Timetable;
 		$entry->class_id = Input::get('class');
 		$entry->room_id = Input::get('room');
-		$entry->users_id = Auth::user()->id;
+		//$entry->users_id = Auth::user()->id;
 		$entry->day_period_id = Input::get('day');
 		if($entry->save());
 			return Redirect::back()
