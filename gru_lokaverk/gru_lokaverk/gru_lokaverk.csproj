@@ -41,6 +41,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,6 +63,16 @@
     <Compile Include="classes_edit.xaml.cs">
       <DependentUpon>classes_edit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeleteForm.xaml.cs">
+      <DependentUpon>DeleteForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Schedule.xaml.cs">
+      <DependentUpon>Edit_Schedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GridViewSort.cs" />
+    <Compile Include="new_Class.xaml.cs">
+      <DependentUpon>new_Class.xaml</DependentUpon>
+    </Compile>
     <Compile Include="sql.cs" />
     <Compile Include="tab1.xaml.cs">
       <DependentUpon>tab1.xaml</DependentUpon>
@@ -68,7 +80,21 @@
     <Compile Include="tab2.xaml.cs">
       <DependentUpon>tab2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="tab3.xaml.cs">
+      <DependentUpon>tab3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="tab4.xaml.cs">
+      <DependentUpon>tab4.xaml</DependentUpon>
+    </Compile>
     <Page Include="classes_edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Edit_Schedule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -84,11 +110,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="new_Class.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="tab1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="tab2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="tab3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="tab4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,6 +154,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bin\Debug\Pictures\red-delete-button.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

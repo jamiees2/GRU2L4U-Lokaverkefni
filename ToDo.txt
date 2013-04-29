@@ -18,19 +18,19 @@ Fer �tarlega � dagskr�nna
 Acceptar bei�nir
 
 
-Vefs��a:
+Vefsíða:
 Responsive
 S�� dagskr� (+sundurli�un)
 Panta stofu
 Leiguskilm�la?
-F� sta�festingu � p�sti (e�a �egar b�i� er a� accepta)
-Geta ni�urhala� admin client ef user hefur r�ttindi
+Fá staðfestingu � p�sti (eða þegar búið er að accepta)
+Geta niðurhalað admin client ef user hefur réttindi
 
 
 Ideas:
 Myndir af stofum
-Myndir af n�fnum af �f�ngum og draga �� inn� reiti(t�flu)
-Ef vikan breytist yfir �nnina, �fangar skiptast � stofum
+Myndir af nöfnum af áföngum og draga þá inní reiti(töflu)
+Ef vikan breytist yfir önnina, �fangar skiptast � stofum
 Ensk/�slenska (Tungum�la valm�guleiki)
 Kort
 Annir

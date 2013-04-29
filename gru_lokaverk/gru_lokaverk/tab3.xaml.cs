@@ -18,20 +18,20 @@ using System.Web;
 namespace gru_lokaverk
 {
     /// <summary>
-    /// Interaction logic for tab2.xaml
+    /// Interaction logic for tab3.xaml
     /// </summary>
-    public partial class tab2 : UserControl
+    public partial class tab3 : UserControl
     {
         sql database = new sql(); //SQL Database
         classes_edit editWin; //Edit class window
         new_Class New_ClassWindow; //New Class window
         DeleteForm deleteWindow; //Delete window
 
-        List<string> getClasses; //List for Classes
-        string SendingFrom = "classes";
+        List<string> getRooms; //List for Classes
+        string SendingFrom = "rooms";
 
 
-        public tab2()
+        public tab3()
         {
             try
             {
@@ -54,28 +54,28 @@ namespace gru_lokaverk
 
         private void ShowClasses()
         {
-            getClasses = new List<string>();
+            getRooms = new List<string>();
             List<Classes> lst = new List<Classes>();
-            Classes sd = new Classes();
+            Classes sr = new Classes();
             try
             {
-                getClasses = database.getAlldata("classes");
-                string[] tempArray = new string[3];
+                getRooms = database.getRooms();
+                string[] tempArray = new string[4];
                 char split = ';';
-                foreach (string item in getClasses)
+                foreach (string item in getRooms)
                 {
                     tempArray = item.Split(split);
-                    sd.id = tempArray[0];
-                    sd.name = tempArray[1];
-                    sd.description = tempArray[2];
-                    sd.Marks = tempArray[1] + " - " + tempArray[2];
-                    sd.delBtn = sd.name;
+                    sr.id = tempArray[0];
+                    sr.name = tempArray[1];
+                    sr.description = tempArray[3];
+                    sr.Marks = tempArray[1] + " - " + tempArray[3];
+                    sr.delBtn = sr.name;
 
-                    lst.Add(sd);
-                    sd = new Classes();
+                    lst.Add(sr);
+                    sr = new Classes();
                 }
                 MyPanel.DataContext = lst;
-                
+
             }
             catch (Exception e)
             {
@@ -102,26 +102,28 @@ namespace gru_lokaverk
         private void ClassesView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var item = ((FrameworkElement)e.OriginalSource).DataContext as Track;
-            if (item ==null)
+            if (item == null)
             {
                 // Opens classes_edit.xaml
-                if (ClassesView.SelectedIndex!=-1)
+                if (ClassesView.SelectedIndex != -1)
                 {
                     Classes valueSelected = (Classes)ClassesView.SelectedItems[0];
 
                     if (editWin != null)
                         editWin.Close();
-                    editWin = new classes_edit(getClasses, valueSelected.id.ToString(),SendingFrom);//Sends the list and the ID of the value selected
+
+                    editWin = new classes_edit(getRooms, valueSelected.id.ToString(),SendingFrom);//Sends the list and the ID of the value selected
                     editWin.closeWindow.Click += new RoutedEventHandler(closeWindow_Click);
-                    editWin.UpdateList.Click +=new RoutedEventHandler(UpdateList_Click);
+                    editWin.UpdateList.Click += new RoutedEventHandler(UpdateList_Click);
                     editWin.Owner = Window.GetWindow(this);
                     editWin.ShowDialog();
                 }
             }
         }
+
         void closeWindow_Click(object sender, RoutedEventArgs e)
         {
-            if(editWin!=null)
+            if (editWin != null)
                 editWin.Close();
             editWin = null;
 
@@ -141,16 +143,15 @@ namespace gru_lokaverk
 
         private void btn_Add_Click(object sender, RoutedEventArgs e)
         {
-
             if (New_ClassWindow != null)
                 New_ClassWindow.Close();
             New_ClassWindow = new new_Class(SendingFrom);
-            New_ClassWindow.closeWindow.Click +=new RoutedEventHandler(closeWindow_Click);
-            New_ClassWindow.UpdateList.Click+=new RoutedEventHandler(UpdateList_Click);
+            New_ClassWindow.closeWindow.Click += new RoutedEventHandler(closeWindow_Click);
+            New_ClassWindow.UpdateList.Click += new RoutedEventHandler(UpdateList_Click);
             New_ClassWindow.Owner = Window.GetWindow(this);
             New_ClassWindow.ShowDialog();
-                
-            
+
+
         }
         //Del Button
         private void del_btn_Click(object sender, RoutedEventArgs e)
@@ -158,8 +159,8 @@ namespace gru_lokaverk
             string nameToDelete = ((Button)sender).Tag.ToString();
 
             deleteWindow = new DeleteForm(nameToDelete,SendingFrom);
-            deleteWindow.closeWindow.Click+=new RoutedEventHandler(closeWindow_Click);
-            deleteWindow.UpdateList.Click+=new RoutedEventHandler(UpdateList_Click);
+            deleteWindow.closeWindow.Click += new RoutedEventHandler(closeWindow_Click);
+            deleteWindow.UpdateList.Click += new RoutedEventHandler(UpdateList_Click);
             deleteWindow.Owner = Window.GetWindow(this);
             deleteWindow.ShowDialog();
 

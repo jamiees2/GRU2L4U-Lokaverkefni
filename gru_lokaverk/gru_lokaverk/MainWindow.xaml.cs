@@ -23,7 +23,42 @@ namespace gru_lokaverk
         public MainWindow()
         {
             InitializeComponent();
-            
+        }
+    }
+
+    public class Classes
+    {
+        private string _id;
+        public string id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+        private string _name;
+        public string name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        private string _marks;
+        public string Marks
+        {
+            get { return _marks; }
+            set { _marks = value; }
+        }
+        private string _description;
+        public string description
+        {
+            get { return _description; }
+            set { _description = value; }
+        }
+
+        private string _nametoDelete;
+        public string delBtn
+        {
+            get { return _nametoDelete; }
+            set { _nametoDelete = value; }
         }
     }
 }

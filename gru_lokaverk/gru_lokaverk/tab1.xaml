@@ -3,11 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="440" d:DesignWidth="884">
+             mc:Ignorable="d" Height="440" Width="840">
 
     <UserControl.Resources>
-        <Style x:Key="MouseOverButtonStyle" TargetType="{x:Type Button}">
+        <Style TargetType="{x:Type Button}">
             <Setter Property="SnapsToDevicePixels" Value="true"/>
             <Setter Property="OverridesDefaultStyle" Value="true"/>
             <Setter Property="Background" Value="{DynamicResource cBackground}" />
@@ -54,8 +53,9 @@
 
 
 
+    <Grid Width="840">
 
-    <Grid>
-        <Grid Name="WeekPlan" Height="440" Width="880" Background="LightSteelBlue" ShowGridLines="True" ></Grid>
+        <Grid Name="WeekPlan" Height="440" Width="840" Background="LightSteelBlue" ShowGridLines="False" >
+        </Grid>
     </Grid>
 </UserControl>

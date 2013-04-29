@@ -36,7 +36,14 @@ namespace gru_lokaverk
                 MessageBox.Show(e.ToString());
             }
             InitializeComponent();
-            fillDataIntoGrid();
+            try
+            {
+                fillDataIntoGrid();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
         }
 
         private void fillDataIntoGrid()
@@ -49,12 +56,14 @@ namespace gru_lokaverk
             string[] days = new string[8];
             try
             {
-                weekDays = database.getDays();
-                time = database.getTime();
+                weekDays = database.getAlldata("days");
+                time = database.getAlldata("periods");
                 counter = 0;
+                string[] tempSplitArray = new string[2];
                 foreach (string item in weekDays)//Gets the weekdays from the database and puts them into an array.
                 {
-                    days[counter] = item;
+                    tempSplitArray = item.Split(';');
+                    days[counter] = tempSplitArray[1];
                     counter++;
                 }
                 counter = 0;
@@ -63,31 +72,62 @@ namespace gru_lokaverk
                 {
                     this.WeekPlan.ColumnDefinitions.Add(new ColumnDefinition());
 
-                    for (int i = 0; i < 15; i++)//Sets rows
+                    for (int i = 0; i < 16; i++)//Sets rows
                     {
                         string content = null;
                         btn_grid[counter] = new Button();
-                        btn_grid[counter].Height = 29;
+                        btn_grid[counter].Height = 27;//27
                         this.WeekPlan.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto});
 
 
 
                         //Adds days to the week
-                        if ((counter)%15==0 && counter>5)
+                        if ((counter)%16==0 && counter >15)// (counter) % 15 == 0 && counter > 5
                         {
                             content = days[j-1];
                         }
                         //Adds the time to the schedule
-                        if (counter>0 && counter<15)
+                        if (counter>0 && counter<16)
                         {
                             string[] tempArray = new string[5];
                             char split = ';';
-                            tempArray = time[counter].Split(split);
+                            tempArray = time[counter-1].Split(split);
                             content = tempArray[1] + " - " + tempArray[2];
                         }
 
+
+
+                        if (counter > 16 && counter < 32)//Monday
+                        {
+
+                        }
+                        else if (counter > 32 && counter < 48)//Tuesday
+                        {
+
+                        }
+                        else if (counter > 48 && counter < 64)//Wednsday
+                        {
+
+                        }
+                        else if (counter > 64 && counter < 80) //Thursday
+                        {
+
+                        }
+                        else if (counter > 80 && counter < 96) //Friday
+                        {
+
+                        }
+                        else if (counter > 96 && counter < 112)//Saturday
+                        {
+
+                        }
+                        else if (counter > 112 && counter < 128) //Sunday
+                        {
+
+                        }
+
                         btn_grid[counter].TabIndex = counter;
-                        btn_grid[counter].Content = content;// +counter;//Adds number to the fields
+                        btn_grid[counter].Content = content +counter;//Adds number to the fields
 
                         Grid.SetRow(btn_grid[counter], i);
                         Grid.SetColumn(btn_grid[counter], j);

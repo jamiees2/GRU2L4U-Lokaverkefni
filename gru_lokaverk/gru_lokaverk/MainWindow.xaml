@@ -59,29 +59,32 @@
     
     
     <Grid>
-        <TabControl Height="473" Width="1016" HorizontalAlignment="Left" Name="tabControl1" VerticalAlignment="Top"  TabStripPlacement="Left">
-            <TabItem Header="Vikan" Name="tab1" IsSelected="True">
-                <Grid Name="gridTab1">
-                    <local:tab1 Margin="0,16,53,0" />
+        <TabControl Height="473" Width="945" HorizontalAlignment="Left" Name="tabControl1" VerticalAlignment="Top"  TabStripPlacement="Left">
+            <TabItem Header="Lausar stofur" Name="tab1" IsSelected="True">
+                <Grid Name="gridTab1" Width="840">
+                    <local:tab1 />
                 </Grid>
             </TabItem>
-            <TabItem Header="Classes" Name="tab2">
+            <TabItem Header="Áfangar" Name="tab2">
                 <Grid Name="gridTab2">
                    <local:tab2/>
                 </Grid>
             </TabItem>
-            <TabItem Header="tabItem3" Name="tab3">
+            <TabItem Header="Stofur" Name="tab3">
                 <Grid>
-                    
+                    <local:tab3/>
                 </Grid>
             </TabItem>
-            <TabItem Header="tabItem4" Name="tab4">
+            <TabItem Header="Stundatöflur" Name="tab4">
                 
-                <Grid />
+                <Grid>
+                    <local:tab4/>
+                </Grid>
             </TabItem>
             <TabItem Header="tabItem5" Name="tab5">
                 <Grid Height="400" Width="508" />
             </TabItem>
         </TabControl>
+
     </Grid>
 </Window>
