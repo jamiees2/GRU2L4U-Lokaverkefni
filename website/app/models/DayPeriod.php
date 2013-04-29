@@ -3,7 +3,7 @@
 class DayPeriod extends Eloquent{
 	protected $table = 'days_periods';
 	public function timetable(){
-		return $this->hasOne('Timetable');
+		return $this->hasMany('Timetable');
 	}
 	public function day(){
 		return $this->belongsTo('Day');

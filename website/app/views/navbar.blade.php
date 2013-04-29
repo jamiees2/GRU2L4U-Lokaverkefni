@@ -12,13 +12,15 @@
           {{
             Navbar::render(
               array(
-                'Stofur' => '/', 
+                'Lausar Stofur' => '/',
+                'Stofur' => '/rooms', 
                 'Áfangar' => '/classes',
               )
             )
           }}
         </ul>
         <ul class="nav pull-right">
+
           @if(Auth::guest())
           {{
             Navbar::render(
@@ -32,6 +34,7 @@
           {{
             Navbar::render(
               array(
+                'Niðurhala forriti' => '/download',
                 'Skrá út' => '/logout'
               )
             )

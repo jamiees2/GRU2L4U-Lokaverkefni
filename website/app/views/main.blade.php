@@ -8,12 +8,12 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    {{HTML::style('css/bootstrap.css')}}
+    {{HTML::style('css/bootstrap.min.css')}}
     {{HTML::style('css/style.css')}}
     <style>
       
     </style>
-    {{ HTML::style('css/bootstrap-responsive.css')}}
+    {{ HTML::style('css/bootstrap-responsive.min.css')}}
     {{Asset::container('head')->styles()}}
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -38,7 +38,7 @@
       @yield('main')
     </div>
     
-    {{HTML::script('js/bootstrap.js')}}
+    {{HTML::script('js/bootstrap.min.js')}}
     {{Asset::container('footer')->scripts()}}
   </body>
 </html>

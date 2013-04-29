@@ -9,12 +9,12 @@ Stundatafla fyrir {{$class->name}}
 
 <ul class="nav nav-pills" id="timetable">
   @foreach($groups as $key => $group)
-    <li><a href="#{{md5($key)}}" data-toggle="tab">{{$key}}</a></li>
+    <li><a href="#{{$group[0]->day_id}}" data-toggle="tab">{{$key}}</a></li>
   @endforeach
 </ul>
 <div class="tab-content">
   @foreach($groups as $key => $group)
-  <div class="tab-pane" id="{{md5($key)}}">
+  <div class="tab-pane" id="{{$group[0]->day_id}}">
     <div class="row-fluid">
       <div class="span12">
         <table class="table footable">
@@ -33,25 +33,25 @@ Stundatafla fyrir {{$class->name}}
             <tr>
               <td>{{$item->period->start_time}} - {{$item->period->end_time}}</td>
 
-              @if($item->timetable)
+              @if($item->timetable->first())
               <td>
-                {{$item->timetable->room->number}}
+                {{$item->timetable->first()->room->number}}
               </td>
               @else
               <td></td>
               @endif
               <td>
-                @if($item->timetable)
-                {{$item->timetable->class_->name}}
+                @if($item->timetable->first())
+                {{$item->timetable->first()->class_->name}}
                 @endif
               </td>
 				      @if(Auth::check())
               <td>
-                @if($item->timetable)
+                @if($item->timetable->first())
                 <button type="button"
-                  data-id="{{$item->timetable->id}}"
+                  data-id="{{$item->timetable->first()->id}}"
                   data-toggle="modal" data-target="#edit"
-                  data-room="{{$item->timetable->room->id}}"
+                  data-room="{{$item->timetable->first()->room->id}}"
                   class="edit btn btn-primary btn-small">Breyta</button>
                 @else
                 <button type="button"
@@ -87,13 +87,7 @@ Stundatafla fyrir {{$class->name}}
     $('.footable').on('click','.new',function(){
       $('#new-day').val($(this).attr('data-day'));
     });
-    $('#timetable a').eq({{date('N')}} - 1).tab('show');
-    $('#timetable a').on('click',function (e) {
-      e.preventDefault();
-      $(this).tab('show');
-    }).on('shown', function (e) { 
-      $('.tab-pane.active table').trigger('footable_resize');
-    });
   });
   </script>
+  @include('admin.timetable.javascript')
 @stop

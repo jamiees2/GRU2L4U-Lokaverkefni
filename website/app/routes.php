@@ -12,7 +12,7 @@
 */
 
 //Rótin á síðunni
-Route::get('/','RoomController@getIndex');
+Route::get('/','TimetableController@getFree');
 
 Route::get('/login', function()
 {
@@ -40,7 +40,7 @@ Route::get('/logout',function(){
 })->before('auth');
 
 Route::get('/download',function(){
-	return Response::download('public/files/setup.zip', 'setup.zipzip');
+	return Response::download('../public/files/setup.zip', 'setup.zip',array('Content-type' => 'application/octet-stream'));
 });
 
 
@@ -55,6 +55,11 @@ App::missing(function($exception)
 });
 
 App::fatal(function($exception)
+{
+    return Response::view('errors.fatal', array(), 500);
+});
+
+App::error(function(ErrorException $exception)
 {
     return Response::view('errors.fatal', array(), 500);
 });

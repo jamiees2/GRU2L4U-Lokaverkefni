@@ -29,7 +29,7 @@ class TimetableController extends BaseController {
 		return View::make('admin.timetable.byroom')
 			->with('groups',$groups)
 			->with('room',Room::find($id))
-			->with('classes',Class_::all())
+			->with('classes',Class_::orderBy('name','desc')->get())
 			->with('rooms',Room::all());
 	}
 
@@ -54,8 +54,27 @@ class TimetableController extends BaseController {
 		return View::make('admin.timetable.byclass')
 			->with('groups',$groups)
 			->with('class',Class_::find($id))
-			->with('classes',Class_::all())
+			->with('classes',Class_::orderBy('name','desc')->get())
 			->with('rooms',Room::all());
+	}
+
+	public function getFree(){
+		Asset::container('footer')->add('footable','js/footable-0.1.js');
+		Asset::container('head')->add('footable','css/footable-0.1.css');
+		$data = DayPeriod::with(array(
+			'day','period','timetable'))
+			//->whereDayID(date('N'))
+			->get();
+		$groups = array();
+		foreach ($data as $item) {
+			if (isset($groups[$item->day->name]))
+				$groups[$item->day->name][] = $item;
+			else
+				$groups[$item->day->name] = array($item);
+		}
+		return View::make('admin.timetable.free')
+			->with('groups',$groups)
+			->with('rooms',Room::lists('number','id'));
 	}
 
 	public function postNew(){
@@ -67,16 +86,19 @@ class TimetableController extends BaseController {
 		$entry->day_period_id = Input::get('day');
 		if($entry->save());
 			return Redirect::back()
-				->with('success','Tími skráður!');
+				->with('success','Tími skráður!')
+				->with('redirect','true');
 		return Redirect::back()
-			->with('error','Tími ekki skráður!');
+			->with('error','Tími ekki skráður!')
+			->with('redirect','true');
 	}
 
 	public function getDelete($id){
 		//Delete the action
 		Timetable::find($id)->delete();
 		return Redirect::back()
-			->with('success','Tíma hent!');
+			->with('success','Tíma hent!')
+			->with('redirect','true');
 	}
 
 	public function postEdit(){
@@ -90,12 +112,15 @@ class TimetableController extends BaseController {
 				$entry->room_id = Input::get('room');
 			if($entry->save())
 				return Redirect::back()
-					->with('success','Tíma breytt!');
+					->with('success','Tíma breytt!')
+					->with('redirect','true');
 			else 
 				return Redirect::back()
-					->with('error','Tíma ekki breytt!');
+					->with('error','Tíma ekki breytt!')
+					->with('redirect','true');
 		}
 		return Redirect::back()
 			->with('error','Tíma ekki breytt!')
+			->with('redirect','true')
 ;	}
 }
