@@ -1,8 +1,8 @@
 ﻿<Window x:Class="gru_lokaverk.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="508" Width="979"
-        xmlns:local="clr-namespace:gru_lokaverk">
+        Title="Vikuplan kennslustofa í tölvustofum Tækniskólanns" Height="520" Width="979"
+        xmlns:tabs="clr-namespace:gru_lokaverk" ResizeMode="NoResize" Icon="/gru_lokaverk;component/bin/Debug/Pictures/icon.png" WindowStartupLocation="CenterScreen">
     
     
     <Window.Resources>
@@ -50,40 +50,36 @@
             </Setter>
         </Style>
     </Window.Resources>
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     <Grid>
-        <TabControl Height="473" Width="945" HorizontalAlignment="Left" Name="tabControl1" VerticalAlignment="Top"  TabStripPlacement="Left">
-            <TabItem Header="Lausar stofur" Name="tab1" IsSelected="True">
+        <TabControl Height="473" Width="945" HorizontalAlignment="Left" Name="tabControl1" VerticalAlignment="Top"  TabStripPlacement="Left" BorderBrush="{x:Null}">
+            <TabItem Header="Lausar stofur" Name="tab1" IsSelected="True" Height="100">
                 <Grid Name="gridTab1" Width="840">
-                    <local:tab1 />
+                    <tabs:tab1 />
                 </Grid>
             </TabItem>
-            <TabItem Header="Áfangar" Name="tab2">
+            <TabItem Header="Áfangar" Name="tab2" Height="100">
                 <Grid Name="gridTab2">
-                   <local:tab2/>
+                   <tabs:tab2/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Stofur" Name="tab3">
+            <TabItem Header="Stofur" Name="tab3" Height="100">
                 <Grid>
-                    <local:tab3/>
+                    <tabs:tab3/>
                 </Grid>
-            </TabItem>
-            <TabItem Header="Stundatöflur" Name="tab4">
-                
+                </TabItem>
+            <TabItem Header="Stundatöflur" Name="tab4" Height="100">
                 <Grid>
-                    <local:tab4/>
+                    <tabs:tab4/>
                 </Grid>
             </TabItem>
-            <TabItem Header="tabItem5" Name="tab5">
-                <Grid Height="400" Width="508" />
-            </TabItem>
+
         </TabControl>
 
     </Grid>

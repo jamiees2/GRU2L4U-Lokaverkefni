@@ -20,12 +20,13 @@ namespace gru_lokaverk
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
         }
     }
-
+    
     public class Classes
     {
         private string _id;

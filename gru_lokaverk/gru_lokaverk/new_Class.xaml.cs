@@ -37,7 +37,7 @@ namespace gru_lokaverk
                 txtbox_Descr.Visibility = Visibility.Hidden;
 
                 RoomTypes = new List<string>();
-                RoomTypes = database.getAlldata("types");
+                RoomTypes = database.getAlldata("types","id");
 
                 string[] tempArray = new string[2];
                 char split = ';';

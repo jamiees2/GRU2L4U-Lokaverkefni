@@ -22,6 +22,7 @@ namespace gru_lokaverk
     /// </summary>
     public partial class tab4 : UserControl
     {
+
         sql database = new sql(); //SQL Database
         Edit_Schedule editWindow;
 
@@ -30,9 +31,15 @@ namespace gru_lokaverk
         string[] ClassScheduleArray;
 
         Button[] btn_grid;
-        int counter = 0, countTimeStamp = 1, dayOfWeek = 1;
+        int counter = 0, periodID = 0, dayOfWeekID = 0;
         string selectedRoom = null;
 
+        private void RefreshTab4()
+        {
+            //showClasses();
+            this.rooms_weekPlan.Children.Clear();
+            fillDataIntoGrid();
+        }
 
         public tab4()
         {
@@ -100,19 +107,16 @@ namespace gru_lokaverk
         {
             this.rooms_weekPlan.ColumnDefinitions.Clear();
             this.rooms_weekPlan.RowDefinitions.Clear();
-            btn_grid = new Button[130];
+            btn_grid = new Button[128];
 
             List<string> weekDays = new List<string>();
             List<string> time = new List<string>();
 
             string[] days = new string[8];
-
-
-
             try
             {
-                weekDays = database.getAlldata("days");
-                time = database.getAlldata("periods");
+                weekDays = database.getAlldata("days","id");
+                time = database.getAlldata("periods","id");
                 ClassSchedule = database.getWeekPlan();
 
                 counter = 0;
@@ -124,33 +128,47 @@ namespace gru_lokaverk
                     counter++;
                 }
                 counter = 0;
-
-                for (int j = 0; j < 8; j++)//Sets Columns
+                for (int j = 0; j < 8; j++)
                 {
+                    periodID = 0;
+
                     this.rooms_weekPlan.ColumnDefinitions.Add(new ColumnDefinition());
 
-                    for (int i = 0; i < 16; i++)//Sets rows
+                    for (int i=0; i < 16; i++)
                     {
-                        string content = null;
+                        string btn_content = null;
+
                         btn_grid[counter] = new Button();
                         btn_grid[counter].Height = 27.4;//27
+
                         this.rooms_weekPlan.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
 
+
+
+                        
+
+                        
                         //Adds days to the week
                         if ((counter) % 16 == 0 && counter > 15)// (counter) % 15 == 0 && counter > 5
                         {
-                            content = days[j - 1];
+                            btn_content = days[j - 1];
                         }
                         //Adds the time to the schedule
+
+                        
+
+                        
                         if (counter > 0 && counter < 16)
                         {
                             string[] tempArray = new string[5];
                             char split = ';';
-                            tempArray = time[counter - 1].Split(split);
-                            content = tempArray[1] + " - " + tempArray[2];
+                            tempArray = time[(counter - 1)].Split(split);
+                            btn_content = tempArray[1] + " - " + tempArray[2];
+                            
+                            
                         }
-
-
+                        
+                        
                         /* Timestamp
                          * 8:10 (ID - 1)
                          * 8:50 (ID - 2)
@@ -168,97 +186,59 @@ namespace gru_lokaverk
                          * 18:15 (ID - 14)
                          * 18:55 (ID - 15)
                          * */
-
+                        
                         if (counter >16 && counter<32)//Monday, ID 1
                         {
                             if (checkClass())
-                                content = ClassScheduleArray[2];
-
-                            if (countTimeStamp == 15) //Counttime is a counter to cound the timestamp for each day.
-                            {
-                                countTimeStamp = 0;
-                                dayOfWeek++;
-                            }
-                            countTimeStamp++;
-                            
+                                btn_content = ClassScheduleArray[2];
                         }
                         else if(counter>32 && counter <48)//Tuesday, ID 2
                         {
                             if (checkClass())
-                                content = ClassScheduleArray[2];
-                            if (countTimeStamp == 15) 
-                            {
-                                countTimeStamp = 0;
-                                dayOfWeek++;
-                            }
-                            countTimeStamp++;
+                                btn_content = ClassScheduleArray[2];
                         }
                         else if (counter > 48 && counter < 64)//Wednsday, ID 3
                         {
                             if (checkClass())
-                                content = ClassScheduleArray[2];
-                            if (countTimeStamp == 15)
-                            {
-                                countTimeStamp = 0;
-                                dayOfWeek++;
-                            }
-                            countTimeStamp++;
+                                btn_content = ClassScheduleArray[2];
                         }
                         else if (counter > 64 && counter < 80) //Thursday, ID 4
                         {
                             if (checkClass())
-                                content = ClassScheduleArray[2];
-                            if (countTimeStamp == 15)
-                            {
-                                countTimeStamp = 0;
-                                dayOfWeek++;
-                            }
-                            countTimeStamp++;
+                                btn_content = ClassScheduleArray[2];
                         }
                         else if (counter > 80 && counter < 96) //Friday, ID 5
                         {
                             if (checkClass())
-                                content = ClassScheduleArray[2];
-                            if (countTimeStamp == 15)
-                            {
-                                countTimeStamp = 0;
-                                dayOfWeek++;
-                            }
-                            countTimeStamp++;
+                                btn_content = ClassScheduleArray[2];
                         }
                         else if (counter > 96 && counter < 112)//Saturday, ID 6
                         {
                             if (checkClass())
-                                content = ClassScheduleArray[2];
-                            if (countTimeStamp == 15)
-                            {
-                                countTimeStamp = 0;
-                                dayOfWeek++;
-                            }
-                            countTimeStamp++;
+                                btn_content = ClassScheduleArray[2];
                         }
                         else if (counter > 112 && counter < 128) //Sunday, ID 7
                         {
                             if (checkClass())
-                                content = ClassScheduleArray[2];
-                            if (countTimeStamp == 15)
-                            {
-                                countTimeStamp = 0;
-                                dayOfWeek++;
-                            }
-                            countTimeStamp++;
+                                btn_content = ClassScheduleArray[2];
                         }
+                        string dayID_periodID = dayOfWeekID + ";" + periodID;
 
-                        btn_grid[counter].Tag = counter ;
-                        btn_grid[counter].Content = content;// + counter;//Adds number to the fields
+
+                        btn_grid[counter].Tag = dayID_periodID;
+                        btn_grid[counter].Content = btn_content;
 
                         Grid.SetRow(btn_grid[counter], i);
                         Grid.SetColumn(btn_grid[counter], j);
-
+                        
                         this.btn_grid[counter].Click += new RoutedEventHandler(tab1_Click);
                         this.rooms_weekPlan.Children.Add(btn_grid[counter]);
+
                         counter++;
+                        periodID++;
                     }
+
+                    dayOfWeekID++;
                 }
             }
             catch (Exception ex)
@@ -273,7 +253,7 @@ namespace gru_lokaverk
             foreach (var item in ClassSchedule)
             {
                 ClassScheduleArray = item.Split(';');
-                if (ClassScheduleArray[0]==dayOfWeek.ToString() && ClassScheduleArray[1]==countTimeStamp.ToString()&& ClassScheduleArray[3]==selectedRoom)
+                if (ClassScheduleArray[0] == dayOfWeekID.ToString() && ClassScheduleArray[1] == periodID.ToString() && ClassScheduleArray[3] == selectedRoom)
                 {
                     return true;
                 }
@@ -283,29 +263,45 @@ namespace gru_lokaverk
 
         private void refresh()
         {
-            dayOfWeek = 1;
-            countTimeStamp = 1;
-            this.rooms_weekPlan.Children.Clear();
+            dayOfWeekID = 0;
+            periodID = 0;
+            RefreshTab4();
+        }
+
+
+        void tab1_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string dayID_PeriodID = ((Button)sender).Tag.ToString();
+                string[] tempArray = new string[2];
+                tempArray = dayID_PeriodID.Split(';');
+                if (tempArray[0] != "0" && tempArray[1] != "0")//So Edit window wont come up when days or time is clicked
+                {
+                    string btnContent = " -- Please Select -- ";
+                    if (((Button)sender).Content != null)
+                        btnContent = ((Button)sender).Content.ToString();
+                    if (editWindow != null)
+                        editWindow.Close();
+                    editWindow = new Edit_Schedule(dayID_PeriodID, btnContent, selectedRoom);
+                    editWindow.closeWindow.Click += new RoutedEventHandler(closeWindow_Click);
+                    editWindow.UpdateList.Click += new RoutedEventHandler(UpdateList_Click);
+                    editWindow.ClearVal.Click += new RoutedEventHandler(ClearVal_Click);
+                    editWindow.Owner = Window.GetWindow(this);
+                    editWindow.ShowDialog();
+                }
+            }
+            catch (Exception)
+            {
+                RefreshTab4();
+            }
 
 
         }
 
-
-        void tab1_Click(object sender, RoutedEventArgs e) // ------------------------------------------------ SETJA INN CHECK Á TIME OG DAGS.
+        void ClearVal_Click(object sender, RoutedEventArgs e)
         {
-            string btnSelected = ((Button)sender).Tag.ToString();
-            string btnContent = " -- Please Select -- ";
-            if (((Button)sender).Content!=null)
-                btnContent = ((Button)sender).Content.ToString();
-            
-
-            if (editWindow != null)
-                editWindow.Close();
-            editWindow = new Edit_Schedule(ClassSchedule, btnSelected,btnContent);
-            editWindow.closeWindow.Click += new RoutedEventHandler(closeWindow_Click);
-            editWindow.UpdateList.Click += new RoutedEventHandler(UpdateList_Click);
-            editWindow.Owner = Window.GetWindow(this);
-            editWindow.ShowDialog();
+            refresh();
         }
 
         void UpdateList_Click(object sender, RoutedEventArgs e)
@@ -318,8 +314,6 @@ namespace gru_lokaverk
             if (editWindow != null)
                 editWindow = null;
             refresh();
-            //showClasses();
-            fillDataIntoGrid();
 
         }
 
@@ -327,8 +321,13 @@ namespace gru_lokaverk
         {
             Classes valueSelected = (Classes)ClassesView.SelectedItems[0];
             selectedRoom = valueSelected.name;
-            refresh(); 
-            fillDataIntoGrid();
+
+            refresh();
+        }
+
+        private void btn_refresh_Click(object sender, RoutedEventArgs e)
+        {
+            refresh();
         }
     }
 }

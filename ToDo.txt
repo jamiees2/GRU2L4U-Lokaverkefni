@@ -15,13 +15,13 @@ Skr� dagskr�/�fanga
 breyta t�ma (hven�r t�mi byrjar/endar)
 b�ta vi� n�rri stofu
 Fer �tarlega � dagskr�nna
-Acceptar bei�nir
+
 
 
 Vefsíða:
 Responsive
 S�� dagskr� (+sundurli�un)
-Panta stofu
+
 Leiguskilm�la?
 Fá staðfestingu � p�sti (eða þegar búið er að accepta)
 Geta niðurhalað admin client ef user hefur réttindi

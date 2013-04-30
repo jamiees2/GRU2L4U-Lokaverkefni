@@ -59,7 +59,7 @@ namespace gru_lokaverk
             Classes sd = new Classes();
             try
             {
-                getClasses = database.getAlldata("classes");
+                getClasses = database.getAlldata("classes","name");
                 string[] tempArray = new string[3];
                 char split = ';';
                 foreach (string item in getClasses)
@@ -137,6 +137,7 @@ namespace gru_lokaverk
         void UpdateList_Click(object sender, RoutedEventArgs e)
         {
             ShowClasses();
+            
         }
 
         private void btn_Add_Click(object sender, RoutedEventArgs e)

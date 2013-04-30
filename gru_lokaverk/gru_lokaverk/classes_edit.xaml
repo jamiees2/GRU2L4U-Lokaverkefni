@@ -1,11 +1,13 @@
 ﻿<Window x:Class="gru_lokaverk.classes_edit"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="" Height="168" Width="244" Name="edit_Window" Background="Azure" WindowStyle="None" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
+        Title="" AllowsTransparency="True" Height="143" Width="244" Name="edit_Window" WindowStyle="None" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize" Background="Transparent">
     <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="50,50,50,50" Background="Azure">
+        </Border>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="78,12,0,0" Name="txtbox_Name" VerticalAlignment="Top" Width="132" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="78,41,0,0" Name="txtbox_Descr" VerticalAlignment="Top" Width="132" />
-        <Label Content="Name" Height="28" HorizontalAlignment="Left" Margin="6,7,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Name" Height="28" HorizontalAlignment="Left" Margin="22,7,0,0" Name="label1" VerticalAlignment="Top" />
         <Label Content="Description" Height="28" HorizontalAlignment="Left" Margin="6,39,0,0" Name="label2" VerticalAlignment="Top" />
         <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="135,85,0,0" Name="btn_Close" VerticalAlignment="Top" Width="75" Click="btn_Close_Click" />
         <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="54,85,0,0" Name="btn_save" VerticalAlignment="Top" Width="75" Click="btn_save_Click" />

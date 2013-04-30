@@ -1,17 +1,17 @@
-﻿<UserControl x:Class="gru_lokaverk.tab4"
+﻿<UserControl x:Class="gru_lokaverk.tab2"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d"
+             mc:Ignorable="d" 
              xmlns:util="clr-namespace:Wpf.Util"
              d:DesignHeight="440" d:DesignWidth="840">
-
     <UserControl.Resources>
-        <Style TargetType="{x:Type Button}">
+        <BitmapImage x:Key="deletePicture" UriSource="/gru_lokaverk;component/bin/Debug/Pictures/red-delete-button.jpg" />
+
+        <Style TargetType="Button" x:Key="btn_No_Hover">
             <Setter Property="SnapsToDevicePixels" Value="true"/>
             <Setter Property="OverridesDefaultStyle" Value="true"/>
-            <Setter Property="Background" Value="{DynamicResource cBackground}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -34,9 +34,6 @@
                             <Trigger Property="IsDefaulted" Value="true">
                                 <Setter TargetName="Border" Property="BorderBrush" Value="#202020" />
                             </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="Border" Property="Background" Value="#808080" />
-                            </Trigger>
                             <Trigger Property="IsPressed" Value="true">
                                 <Setter TargetName="Border" Property="Background" Value="#E0E0E0" />
                                 <Setter TargetName="Border" Property="BorderBrush" Value="#606060" />
@@ -51,41 +48,55 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
     </UserControl.Resources>
 
-    <Grid Name="MyPanel">
 
+    <StackPanel Name="MyPanel">
         <Popup  Height="Auto" Width="Auto" Name="MyToolTip" StaysOpen="True" AllowsTransparency="True"  >
             <Border BorderThickness="1" Background="Azure" >
                 <StackPanel Margin="30"  Orientation="Horizontal">
-                    <TextBlock Text="Stofa: "/>
+                    <TextBlock Text="Áfangi: "/>
                     <TextBlock  Name="PopupTextBlock" />
                 </StackPanel>
             </Border>
         </Popup>
-        <ListView TextBlock.TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Name="ClassesView" ItemsSource="{Binding}" Width="65" Height="440" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" util:GridViewSort.AutoSort="True" IsEnabled="True" util:GridViewSort.ShowSortGlyph="False" SelectionChanged="ClassesView_SelectionChanged">
+
+        <ListView  Name="ClassesView" ItemsSource="{Binding}" Height="400" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" MouseDoubleClick="ClassesView_MouseDoubleClick" util:GridViewSort.AutoSort="True" IsEnabled="True">
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <EventSetter Event="Mouse.MouseEnter" Handler="Show_PopupToolTip" />
-                    <EventSetter Event="Mouse.MouseLeave" Handler="Hide_PopupToolTip" />
+                    <EventSetter Event="Mouse.MouseLeave" Handler="Hide_PopupToolTip"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center" />
                 </Style>
             </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header="Rooms" util:GridViewSort.PropertyName="id" Width="68" TextBlock.TextAlignment="Left">
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Path=id}" util:GridViewSort.PropertyName="id" Width="0"/>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=name}" util:GridViewSort.PropertyName="name" Width="170" />
+                        <GridViewColumn TextBlock.TextAlignment="Left" Header="Description" DisplayMemberBinding="{Binding Path=description}" util:GridViewSort.PropertyName="description" Width="590"/>
+                        <GridViewColumn>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Path=name}" Height="35" />
+                                    <Button Height="35" Width="50" Name="del_btn" Click="del_btn_Click" Tag="{Binding Path=delBtn}" Style="{StaticResource btn_No_Hover}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="{StaticResource deletePicture}" Stretch="Fill" TileMode="None"/>
+                                        </Button.Background>
+                                    </Button>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
+
+                            
                         </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Grid Name="rooms_weekPlan" Height="440" Background="LightSteelBlue" Margin="71,1,12,23"></Grid>
-   </Grid>
+        <Grid>
+            <Label Content="Hint: Double click to edit." Height="28" Name="label1" />
+            <Button Content="New" Height="23" Name="btn_Add" Width="75" Click="btn_Add_Click" />
+        </Grid>
 
+    </StackPanel>
 </UserControl>

@@ -1,11 +1,14 @@
 ﻿<Window x:Class="gru_lokaverk.Edit_Schedule"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Edit_Schedule" Height="173" Width="285" Name="edit_Window" Background="Azure" WindowStyle="None" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
+    Title="Edit_Schedule" AllowsTransparency="True" Height="173" Width="285" Name="edit_Window" Background="Transparent" WindowStyle="None" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize" Loaded="edit_Window_Loaded">
     <Grid>
-        <Label Content="Select the Class you would like to edit" Margin="28,12,-16,83" Name="lbl_instr"  />
-        <Button Content="Cancel" Height="23"  Margin="140,78,48,32" Name="btn_Close"  Width="75" Click="btn_Close_Click" />
-        <Button Content="Save" Height="23"  Margin="48,78,140,32" Name="btn_save" Width="75" Click="btn_save_Click" />
-        <ComboBox  Height="23" Margin="48,39,48,72" Name="comboBox_classes" />
+        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="50,50,50,50" Background="Azure">
+        </Border>
+        <Label Content="Select the Class you would like to edit" Margin="28,-1,-16,96" Name="lbl_instr"  />
+        <Button Content="Cancel" Height="23"  Margin="140,98,48,12" Name="btn_Close"  Width="75" Click="btn_Close_Click" />
+        <Button Content="Save" Height="23"  Margin="48,98,140,12" Name="btn_save" Width="75" Click="btn_save_Click" />
+        <ComboBox Focusable="True" Height="23" Margin="48,26,48,85" Name="comboBox_classes" />
+        <Button Content="Clear!" Height="37"  Margin="94,55,94,42" Name="btn_clearValue"  Width="75" Click="btn_clearValue_Click" />
     </Grid>
 </Window>

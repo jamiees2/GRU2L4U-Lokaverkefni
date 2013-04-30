@@ -84,7 +84,7 @@ namespace gru_lokaverk
                     if (infoSentFrom == "rooms") // There is not need for this IF sentence, but takes less RAM if classes is not running.
                     {
                         RoomTypes = new List<string>();
-                        RoomTypes = database.getAlldata("types");
+                        RoomTypes = database.getAlldata("types", "id");
 
                         char split = ';';
                         RoomsDescription_Array = null;

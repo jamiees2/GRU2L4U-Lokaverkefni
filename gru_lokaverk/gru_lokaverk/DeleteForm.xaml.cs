@@ -60,7 +60,7 @@ namespace gru_lokaverk
             }
             catch (Exception l)
             {
-                MessageBox.Show(l.ToString());
+                MessageBox.Show("Ekki er hægt að eyða gögnum. Eru í notkun annarsstaðar.");
             }
             
             this.Close();

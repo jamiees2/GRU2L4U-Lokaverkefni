@@ -75,7 +75,7 @@
                     <GridView.Columns>
                         <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Path=id}" util:GridViewSort.PropertyName="id" Width="0"/>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=name}" util:GridViewSort.PropertyName="name" Width="170" />
-                        <GridViewColumn TextBlock.TextAlignment="Left" Header="Description" DisplayMemberBinding="{Binding Path=description}" util:GridViewSort.PropertyName="description" Width="600"/>
+                        <GridViewColumn TextBlock.TextAlignment="Left" Header="Description" DisplayMemberBinding="{Binding Path=description}" util:GridViewSort.PropertyName="description" Width="590"/>
                         <GridViewColumn>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
