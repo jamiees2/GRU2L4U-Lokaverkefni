@@ -23,7 +23,7 @@ class ClassController extends BaseController {
 		Asset::container('footer')->add('footable-filter','js/footable.filter.js');
 		Asset::container('head')->add('footable','css/footable-0.1.css');
 		Asset::container('head')->add('footable-sortable','css/footable.sortable-0.1.css');
-		return View::make('admin.classes')
+		return View::make('classes')
 			->with('classes',Class_::all());
 	}
 
@@ -31,7 +31,7 @@ class ClassController extends BaseController {
 	 * Returns a view for creating a new class
 	 */
 	public function getNew(){
-		return View::make('admin.classes.new');
+		return View::make('classes.new');
 	}
 
 	/**
@@ -54,7 +54,7 @@ class ClassController extends BaseController {
 	 * Returns a view for deleting the class
 	 */
 	public function getDelete($id){
-		return View::make('admin.classes.delete')
+		return View::make('classes.delete')
 			->with('class',Class_::find($id));
 	}
 
@@ -71,7 +71,7 @@ class ClassController extends BaseController {
 	 * Returns a view for editing
 	 */
 	public function getEdit($id){
-		return View::make('admin.classes.edit')
+		return View::make('classes.edit')
 			->with('class',Class_::find($id));
 	}
 

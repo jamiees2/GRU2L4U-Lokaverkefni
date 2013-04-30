@@ -72,7 +72,7 @@ Stundatafla fyrir {{$class->name}}
   @endforeach
 </div>
 @if(Auth::check())
-  @include('admin.timetable.byclass.forms')
+  @include('timetable.byclass.forms')
 @endif
  <script>
   $(function(){
@@ -89,5 +89,5 @@ Stundatafla fyrir {{$class->name}}
     });
   });
   </script>
-  @include('admin.timetable.javascript')
+  @include('timetable.javascript')
 @stop

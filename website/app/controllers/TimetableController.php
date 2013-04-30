@@ -43,7 +43,7 @@ class TimetableController extends BaseController {
 			->get();
 		$groups = $this->_group($data);
 		//dd($groups['Mánudagur']);
-		return View::make('admin.timetable.byroom')
+		return View::make('timetable.byroom')
 			->with('groups',$groups)
 			->with('room',Room::find($id))
 			->with('classes',Class_::orderBy('name','desc')->get())
@@ -68,7 +68,7 @@ class TimetableController extends BaseController {
 		$groups = $this->_group($data);
 
 		//views/admin/timetable/byclass
-		return View::make('admin.timetable.byclass')
+		return View::make('timetable.byclass')
 			->with('groups',$groups)
 			->with('class',Class_::find($id))
 			->with('classes',Class_::orderBy('name','desc')->get())
@@ -89,7 +89,7 @@ class TimetableController extends BaseController {
 			->get();
 		$groups = $this->_group($data);
 		//views/admin/timetable/free
-		return View::make('admin.timetable.free')
+		return View::make('timetable.free')
 			->with('groups',$groups)
 			->with('rooms',Room::lists('number','id'));
 	}
@@ -114,7 +114,7 @@ class TimetableController extends BaseController {
 				unset($rooms[$value->room->id]);
 		}
 		//Make the view
-		return View::make('admin.timetable.free.forms')
+		return View::make('timetable.free.forms')
 			->with('rooms',$rooms)
 			->with('day_id',$day_id);
 	}

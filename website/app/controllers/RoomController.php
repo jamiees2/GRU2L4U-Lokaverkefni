@@ -22,7 +22,7 @@ class RoomController extends BaseController {
 		Asset::container('footer')->add('footable-filter','js/footable.filter.js');
 		Asset::container('head')->add('footable','css/footable-0.1.css');
 		Asset::container('head')->add('footable-sortable','css/footable.sortable-0.1.css');
-		return View::make('admin.rooms')
+		return View::make('rooms')
 			->with('rooms',Room::with('type_')->get());
 	}
 
@@ -30,7 +30,7 @@ class RoomController extends BaseController {
 	 * Returns a view for creating a new room
 	 */
 	public function getNew(){
-		return View::make('admin.rooms.new')
+		return View::make('rooms.new')
 			->with('types',Type::all());
 	}
 
@@ -54,7 +54,7 @@ class RoomController extends BaseController {
 	 * Returns a view for deleting a room
 	 */
 	public function getDelete($id){
-		return View::make('admin.rooms.delete')
+		return View::make('rooms.delete')
 			->with('room',Room::find($id));
 	}
 
@@ -71,7 +71,7 @@ class RoomController extends BaseController {
 	 * Returns a view for editing a room
 	 */
 	public function getEdit($id){
-		return View::make('admin.rooms.edit')
+		return View::make('rooms.edit')
 			->with('room',Room::find($id))
 			->with('types',Type::all());
 	}

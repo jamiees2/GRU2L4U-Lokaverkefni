@@ -69,7 +69,7 @@ Dagskrá stofu {{$room->number}}
   @endforeach
 </div>
 @if(Auth::check())
-  @include('admin.timetable.byroom.forms')
+  @include('timetable.byroom.forms')
 @endif
 <script>
   $(function(){
@@ -86,5 +86,5 @@ Dagskrá stofu {{$room->number}}
     });
   });
 </script>
-@include('admin.timetable.javascript')
+@include('timetable.javascript')
 @stop

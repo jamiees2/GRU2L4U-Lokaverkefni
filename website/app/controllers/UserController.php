@@ -20,7 +20,7 @@ class UserController extends BaseController {
         Asset::container('head')->add('footable','css/footable-0.1.css');
         Asset::container('head')->add('footable-sortable','css/footable.sortable-0.1.css');
         
-        return View::make('admin.users')
+        return View::make('users')
             ->with('users',User::all());
     }
 
@@ -29,7 +29,7 @@ class UserController extends BaseController {
      */
     public function getNew(){
         Asset::container('footer')->add('password.verify','js/password.verify.js');
-        return View::make('admin.users.new');
+        return View::make('users.new');
     }
 
     /**
@@ -52,7 +52,7 @@ class UserController extends BaseController {
      * Returns the view for deleting a user
      */
     public function getDelete($id){
-        return View::make('admin.users.delete')
+        return View::make('users.delete')
             ->with('user',User::find($id));
     }
 
@@ -70,7 +70,7 @@ class UserController extends BaseController {
      */
     public function getEdit($id){
         Asset::container('footer')->add('password.verify','js/password.verify.js');
-        return View::make('admin.users.edit')
+        return View::make('users.edit')
             ->with('user',User::find($id));
     }
 

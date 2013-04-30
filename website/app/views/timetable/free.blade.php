@@ -77,5 +77,5 @@ $(document).ready(function() {
   
 });
 </script>
-@include('admin.timetable.javascript')
+@include('timetable.javascript')
 @stop
