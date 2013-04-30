@@ -90,7 +90,8 @@ class TimetableController extends BaseController {
 	 */
 	public function getFree(){
 		$this->_assets();
-		
+		Asset::container('footer')->add('free-modal','js/free.modal.js');
+
 		//Get all the day_periods and JOIN the days and the periods on it
 		$data = DayPeriod::with(array('day','period'))
 			->get();
