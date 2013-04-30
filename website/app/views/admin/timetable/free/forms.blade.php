@@ -1,4 +1,6 @@
-
+@if(empty($rooms))
+Engar stofur lausar
+@else
 <table class="table footable">
   <thead>
     <th>Tafla</th>
@@ -15,3 +17,4 @@
     @endforeach
   </tbody>
 </table>
+@endif

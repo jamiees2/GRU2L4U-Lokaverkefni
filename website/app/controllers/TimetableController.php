@@ -2,22 +2,19 @@
 
 
 class TimetableController extends BaseController {
-
+	/**
+	 * Constructs the instance
+	 */
 	public function __construct(){
+		//Prevents unauthorized access to sensitive spots
 		$this->beforeFilter('auth', array('only' =>
                             array('postNew', 'getDelete','postEdit')));
 	}
-	public function getByroom($id){
-		//Return all the rows of the timetable by room
-		Asset::container('footer')->add('footable','js/footable-0.1.js');
-		Asset::container('head')->add('footable','css/footable-0.1.css');
-		$data = DayPeriod::with(array(
-			'day','period','timetable' => function($query) use ($id)
-			{
-				$query->whereRoomID($id);
-			}
-			,'timetable.room','timetable.class_'))
-			->get();
+
+	/**
+	 * Helper function to group the timetable entries by days
+	 */
+	public function _group($data){
 		$groups = array();
 		foreach ($data as $item) {
 			if (isset($groups[$item->day->name]))
@@ -25,6 +22,26 @@ class TimetableController extends BaseController {
 			else 
 				$groups[$item->day->name] = array($item);
 		}
+		return $groups;
+	}
+
+	/**
+	 * Returns all the rows in the timetable, given the id of the room
+	 */
+	public function getByroom($id){
+		//Add footable
+		Asset::container('footer')->add('footable','js/footable-0.1.js');
+		Asset::container('head')->add('footable','css/footable-0.1.css');
+		//Næ í alla dagana og periods og JOIN-a timetable þegar það er hægt
+		//Ef að herbergis id'ið í timetable er það sem var beðið um
+		$data = DayPeriod::with(array(
+			'day','period','timetable' => function($query) use ($id)
+			{
+				$query->whereRoomID($id);
+			}
+			,'timetable.room','timetable.class_'))
+			->get();
+		$groups = $this->_group($data);
 		//dd($groups['Mánudagur']);
 		return View::make('admin.timetable.byroom')
 			->with('groups',$groups)
@@ -33,24 +50,24 @@ class TimetableController extends BaseController {
 			->with('rooms',Room::all());
 	}
 
+	/**
+	 * Returns all the rows in the timetable, given the id of the class
+	 */
 	public function getByclass($id){
-		//Return all the rows of the timetable by room
+		//Add footable
 		Asset::container('footer')->add('footable','js/footable-0.1.js');
 		Asset::container('head')->add('footable','css/footable-0.1.css');
+		//Næ í alla dagana og periods og JOIN-a timetable þegar það er hægt
+		//Ef að áfanga id'ið í timetable er það sem var beðið um
 		$data = DayPeriod::with(array(
 			'day','period','timetable' => function($query) use ($id){
 				$query->whereClassID($id);
 			}
 			,'timetable.room','timetable.class_'))
 			->get();
-		$groups = array();
-		foreach ($data as $item) {
-			if (isset($groups[$item->day->name]))
-				$groups[$item->day->name][] = $item;
-			else
-				$groups[$item->day->name] = array($item);
-		}
-		//dd($groups['Mánudagur']);
+		$groups = $this->_group($data);
+
+		//views/admin/timetable/byclass
 		return View::make('admin.timetable.byclass')
 			->with('groups',$groups)
 			->with('class',Class_::find($id))
@@ -58,49 +75,60 @@ class TimetableController extends BaseController {
 			->with('rooms',Room::all());
 	}
 
+	/**
+	 * Returns all the rooms that are not in the timetable
+	 * Analyzes what is available
+	 */
 	public function getFree(){
+		//Add footable
 		Asset::container('footer')->add('footable','js/footable-0.1.js');
 		Asset::container('head')->add('footable','css/footable-0.1.css');
-		$data = DayPeriod::with(array(
-			'day','period','timetable'))
-			//->whereDayID(date('N'))
+		
+		//Get all the day_periods and JOIN the days and the periods on it
+		$data = DayPeriod::with(array('day','period'))
 			->get();
-		$groups = array();
-		foreach ($data as $item) {
-			if (isset($groups[$item->day->name]))
-				$groups[$item->day->name][] = $item;
-			else
-				$groups[$item->day->name] = array($item);
-		}
+		$groups = $this->_group($data);
+		//views/admin/timetable/free
 		return View::make('admin.timetable.free')
 			->with('groups',$groups)
 			->with('rooms',Room::lists('number','id'));
 	}
 
+	/**
+	 * Returns the rooms that are free, given the id of the day_period
+	 * Redirects to getFree if the request was not made with AJAX
+	 */
 	public function getFreeview($id){
-		/*
-		if (!Response::ajax())
-			return Redirect::action('TimetableController@getFree');*/
+		//If the request was not ajax, tell the user to go away
+		if (!Request::ajax())
+			return Redirect::action('TimetableController@getFree');
+		//Get all the entries for the specific day_period id
 		$data = Timetable::whereDayPeriodId($id)->get();
+		//Get the day id (needed for tabbing)
 		$day_id = DayPeriod::find($id)->day_id;
-		$used_rooms = array();
+		//Get all the rooms
 		$rooms = Room::all()->toArray();
+		//Get rid of all the rooms that are used
 		foreach ($data as $key => $value) {
 			if(isset($rooms[$value->room->id]))
 				unset($rooms[$value->room->id]);
 		}
+		//Make the view
 		return View::make('admin.timetable.free.forms')
 			->with('rooms',$rooms)
 			->with('day_id',$day_id);
 	}
 
+	/**
+	 * Creates a new entry into the timetable
+	 */
 	public function postNew(){
 		//Create a new row in the timetable
 		$entry = new Timetable;
 		$entry->class_id = Input::get('class');
 		$entry->room_id = Input::get('room');
-		//$entry->users_id = Auth::user()->id;
 		$entry->day_period_id = Input::get('day');
+		
 		if($entry->save());
 			return Redirect::back()
 				->with('success','Tími skráður!')
@@ -110,6 +138,9 @@ class TimetableController extends BaseController {
 			->with('redirect','true');
 	}
 
+	/**
+	 * Deletes an entry from the timetable
+	 */
 	public function getDelete($id){
 		//Delete the action
 		Timetable::find($id)->delete();
@@ -118,6 +149,9 @@ class TimetableController extends BaseController {
 			->with('redirect','true');
 	}
 
+	/**
+	 * Edits the entry in the timetable
+	 */
 	public function postEdit(){
 		//Save timetable edit
 		if(Input::has('id'))

@@ -28,18 +28,11 @@ Lausar Stofur
             @foreach($group as $item)
             <tr>
               <td>{{$item->period->start_time}} - {{$item->period->end_time}}</td>
-
-              @if($item->timetable->count() == count($rooms))
-              <td>
-                Engar stofur lausar
-              </td>
-              @else
               <td>
                 <button class="btn btn-primary modal-btn" data-toggle="modal" data-target="{{URL::action('TimetableController@getFreeview',array($item->id))}}">
                   Lausar Stofur
                 </button>
               </td>
-              @endif
             </tr>
             @endforeach
           </tbody>
