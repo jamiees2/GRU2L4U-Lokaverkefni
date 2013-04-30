@@ -1,10 +1,10 @@
 @extends('main')
 
 @section('title')
-Skrá inn
+Ný stofa
 @stop
 @section('main')
-<h2>Breyta herbergi</h2>
+<h2>Ný stofa</h2>
 <br />
 <form method="post" accept-charset="utf8" action="{{URL::action('RoomController@postNew')}}" class="form-horizontal">
   <div class="control-group">

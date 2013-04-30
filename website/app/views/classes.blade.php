@@ -1,10 +1,10 @@
 @extends('main')
 
 @section('title')
-Tímar
+Áfangar
 @stop
 @section('main')
-<h2>Tímar</h2>
+<h2>Áfangar</h2>
 <br />
 <div class="row-fluid">
     <div class="span12">

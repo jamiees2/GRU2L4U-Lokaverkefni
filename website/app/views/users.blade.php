@@ -1,10 +1,10 @@
 @extends('main')
 
 @section('title')
-Stofur
+Notendur
 @stop
 @section('main')
-<h2>Stofur</h2>
+<h2>Notendur</h2>
 <br />
 <div class="row-fluid">
     <div class="span12">

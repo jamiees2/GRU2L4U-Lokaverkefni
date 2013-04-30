@@ -14,7 +14,7 @@ class TimetableController extends BaseController {
 	/**
 	 * Helper function to group the timetable entries by days
 	 */
-	public function _group($data){
+	private function _group($data){
 		$groups = array();
 		foreach ($data as $item) {
 			if (isset($groups[$item->day->name]))
@@ -26,12 +26,22 @@ class TimetableController extends BaseController {
 	}
 
 	/**
+	 * Helper function to add all the assets required
+	 */
+	private function _assets(){
+		//Footable
+		Asset::container('footer')->add('footable','js/footable-0.1.js');
+		Asset::container('head')->add('footable','css/footable-0.1.css');
+		//Tabs
+		Asset::container('footer')->add('tabs','js/tabs.js');
+	}
+
+	/**
 	 * Returns all the rows in the timetable, given the id of the room
 	 */
 	public function getByroom($id){
-		//Add footable
-		Asset::container('footer')->add('footable','js/footable-0.1.js');
-		Asset::container('head')->add('footable','css/footable-0.1.css');
+		$this->_assets();
+		
 		//Næ í alla dagana og periods og JOIN-a timetable þegar það er hægt
 		//Ef að herbergis id'ið í timetable er það sem var beðið um
 		$data = DayPeriod::with(array(
@@ -54,9 +64,8 @@ class TimetableController extends BaseController {
 	 * Returns all the rows in the timetable, given the id of the class
 	 */
 	public function getByclass($id){
-		//Add footable
-		Asset::container('footer')->add('footable','js/footable-0.1.js');
-		Asset::container('head')->add('footable','css/footable-0.1.css');
+		$this->_assets();
+
 		//Næ í alla dagana og periods og JOIN-a timetable þegar það er hægt
 		//Ef að áfanga id'ið í timetable er það sem var beðið um
 		$data = DayPeriod::with(array(
@@ -80,9 +89,7 @@ class TimetableController extends BaseController {
 	 * Analyzes what is available
 	 */
 	public function getFree(){
-		//Add footable
-		Asset::container('footer')->add('footable','js/footable-0.1.js');
-		Asset::container('head')->add('footable','css/footable-0.1.css');
+		$this->_assets();
 		
 		//Get all the day_periods and JOIN the days and the periods on it
 		$data = DayPeriod::with(array('day','period'))

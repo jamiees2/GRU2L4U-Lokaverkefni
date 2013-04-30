@@ -1,10 +1,10 @@
 @extends('main')
 
 @section('title')
-Skrá inn
+Eyða stofu
 @stop
 @section('main')
-<h2>Eyða herbergi</h2>
+<h2>Eyða stofu</h2>
 <br />
 <form method="post" accept-charset="utf8" action="{{URL::action('RoomController@postDelete',array($room->id))}}" class="form-horizontal">
   <div class="span2">

@@ -1,10 +1,10 @@
 @extends('main')
 
 @section('title')
-Skrá inn
+Breyta áfanga
 @stop
 @section('main')
-<h2>Breyta stofu</h2>
+<h2>Breyta áfanga</h2>
 <br />
 <form method="post" accept-charset="utf8" action="{{URL::action('ClassController@postEdit',array($class->id))}}" class="form-horizontal">
   <div class="control-group">

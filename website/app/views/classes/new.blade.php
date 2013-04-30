@@ -1,10 +1,10 @@
 @extends('main')
 
 @section('title')
-Skrá inn
+Nýr áfangi
 @stop
 @section('main')
-<h2>Ný stofa</h2>
+<h2>Nýr áfangi</h2>
 <br />
 <form method="post" accept-charset="utf8" action="{{URL::action('ClassController@postNew')}}" class="form-horizontal">
   <div class="control-group">
