@@ -13,7 +13,7 @@
       </form>
       <table data-filter="#filter" class="table footable">
         <thead>
-          <th data-class="expand" data-hide="phone">Tafla</th>
+          <th data-class="expand">Tafla</th>
           <th data-sort-initial="true">Nafn</th>
           <th data-hide="phone">Lýsing</th>
           @if(Auth::check())
