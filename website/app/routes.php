@@ -48,6 +48,7 @@ Route::get('/download',function(){
 Route::controller('rooms','RoomController');
 Route::controller('classes','ClassController');
 Route::controller('timetable','TimetableController');
+Route::controller('users','UserController');
 
 App::missing(function($exception)
 {
@@ -56,10 +57,10 @@ App::missing(function($exception)
 
 App::fatal(function($exception)
 {
-    return Response::view('errors.fatal', array(), 500);
+    //return Response::view('errors.fatal', array(), 500);
 });
 
 App::error(function(ErrorException $exception)
 {
-    return Response::view('errors.fatal', array(), 500);
+    //return Response::view('errors.fatal', array(), 500);
 });

@@ -32,6 +32,12 @@ body {
   padding: 0 10px 20px;
 }
 
+@media (max-width: 767px) {
+  .delete-btn{
+    margin-top: 10px;
+  }
+}
+
 @media (max-width: 480px) {
   .nav-pills > li {
   float: none;

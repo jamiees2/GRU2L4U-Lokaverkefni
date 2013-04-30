@@ -77,6 +77,23 @@ class TimetableController extends BaseController {
 			->with('rooms',Room::lists('number','id'));
 	}
 
+	public function getFreeview($id){
+		/*
+		if (!Response::ajax())
+			return Redirect::action('TimetableController@getFree');*/
+		$data = Timetable::whereDayPeriodId($id)->get();
+		$day_id = DayPeriod::find($id)->day_id;
+		$used_rooms = array();
+		$rooms = Room::all()->toArray();
+		foreach ($data as $key => $value) {
+			if(isset($rooms[$value->room->id]))
+				unset($rooms[$value->room->id]);
+		}
+		return View::make('admin.timetable.free.forms')
+			->with('rooms',$rooms)
+			->with('day_id',$day_id);
+	}
+
 	public function postNew(){
 		//Create a new row in the timetable
 		$entry = new Timetable;

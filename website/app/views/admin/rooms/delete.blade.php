@@ -10,7 +10,7 @@ Skrá inn
   <div class="span2">
     <button type="submit" class="btn btn-danger">Eyða</button>
   </div>
-  <div class="span2">
+  <div class="span2 delete-btn">
     <a class="btn btn-primary" href="{{URL::action('RoomController@getIndex')}}">Hætta við</a>
   </div>
 </form>

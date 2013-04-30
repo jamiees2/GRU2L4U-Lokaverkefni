@@ -35,10 +35,9 @@ Lausar Stofur
               </td>
               @else
               <td>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#{{md5($item->id)}}">
+                <button class="btn btn-primary modal-btn" data-toggle="modal" data-target="{{URL::action('TimetableController@getFreeview',array($item->id))}}">
                   Lausar Stofur
                 </button>
-                @include('admin.timetable.free.forms')
               </td>
               @endif
             </tr>
@@ -50,5 +49,40 @@ Lausar Stofur
   </div>
   @endforeach
 </div>
+
+<div class="modal hide fade" id="free-rooms" tabindex="-1" role="dialog" aria-labelledby="header" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="header">Lausar Stofur</h3>
+  </div>
+  <div class="modal-body" id="table">
+    
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Loka</button>
+  </div>
+</div>
+
+</div>
+<script>
+$(document).ready(function() {
+  
+  // Support for AJAX loaded modal window.
+  // Focuses on first input textbox after it loads the window.
+  $('.modal-btn').click(function(e) {
+    e.preventDefault();
+    $('#table').html('<div class="progress progress-striped active"><div class="bar" id="ajax-bar" style="width: 100%;"></div></div>');
+    $('#free-rooms').modal('show');
+    var url = $(this).attr('data-target');
+    $.ajax({
+      url: url,
+      success: function(data){
+        $('#table').html(data);
+      }
+    });
+  });
+  
+});
+</script>
 @include('admin.timetable.javascript')
 @stop

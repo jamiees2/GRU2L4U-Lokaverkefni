@@ -18,6 +18,15 @@
               )
             )
           }}
+          @if(Auth::check())
+          {{
+            Navbar::render(
+              array(
+                'Notendur' => '/users'
+              )
+            )
+          }}
+          @endif
         </ul>
         <ul class="nav pull-right">
 
