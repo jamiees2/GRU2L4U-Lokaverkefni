@@ -29,7 +29,7 @@ Lausar Stofur
             <tr>
               <td>{{$item->period->start_time}} - {{$item->period->end_time}}</td>
               <td>
-                <button class="btn btn-primary modal-btn" data-toggle="modal" data-target="{{URL::action('TimetableController@getFreeview',array($item->id))}}">
+                <button class="btn btn-primary modal-btn" data-href="{{URL::action('TimetableController@getFreeview',array($item->id))}}">
                   Lausar Stofur
                 </button>
               </td>

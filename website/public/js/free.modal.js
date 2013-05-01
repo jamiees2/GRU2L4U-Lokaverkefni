@@ -9,9 +9,9 @@ $(function() {
     $('#free-rooms').modal('show');
 
     //AJAX load the url
-    var url = $(this).attr('data-target');
+    var target = $(this).attr('data-href');
     $.ajax({
-      'url': url,
+      'url': target,
       success: function(data){
         $('#table').html(data);
       }
