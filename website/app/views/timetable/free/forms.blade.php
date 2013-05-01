@@ -7,11 +7,11 @@ Engar stofur lausar
     <th>Stofa</th>
   </thead>
   <tbody>
-    @foreach($rooms as $room)
+    @foreach($rooms as $key => $room)
       <tr>
-        <td><a class="btn btn-success" href="{{URL::action('TimetableController@getByroom',array($room['id']))}}#{{$day_id}}">Tafla</a></td>
+        <td><a class="btn btn-success" href="{{URL::action('TimetableController@getByroom',array($key))}}#{{$day_id}}">Tafla</a></td>
         <td>
-          {{$room['number']}}
+          {{$room}}
         </td>
       </tr>
     @endforeach

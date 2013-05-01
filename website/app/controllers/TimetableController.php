@@ -98,8 +98,7 @@ class TimetableController extends BaseController {
 		$groups = $this->_group($data);
 		//views/admin/timetable/free
 		return View::make('timetable.free')
-			->with('groups',$groups)
-			->with('rooms',Room::lists('number','id'));
+			->with('groups',$groups);
 	}
 
 	/**
@@ -108,18 +107,20 @@ class TimetableController extends BaseController {
 	 */
 	public function getFreeview($id){
 		//If the request was not ajax, tell the user to go away
-		if (!Request::ajax())
-			return Redirect::action('TimetableController@getFree');
+		/*if (!Request::ajax())
+			return Redirect::action('TimetableController@getFree');*/
 		//Get all the entries for the specific day_period id
 		$data = Timetable::whereDayPeriodId($id)->get();
 		//Get the day id (needed for tabbing)
 		$day_id = DayPeriod::find($id)->day_id;
 		//Get all the rooms
-		$rooms = Room::all()->toArray();
+		$rooms = Room::lists('number','id');
 		//Get rid of all the rooms that are used
 		foreach ($data as $key => $value) {
-			if(isset($rooms[$value->room->id]))
-				unset($rooms[$value->room->id]);
+			if(isset($rooms[$value->room_id]))
+			{
+				unset($rooms[$value->room_id]);
+			}
 		}
 		//Make the view
 		return View::make('timetable.free.forms')
