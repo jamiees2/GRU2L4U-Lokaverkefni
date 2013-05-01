@@ -1,16 +1,17 @@
 $(function(){
 	$("#password").on('keyup',function(){
-
+		//Set variables
 		var $this = $(this);
 		var pwd = $this.val();
 		var pwd_confirm = $('#password_confirm');
 		var $elem = $this.next('.add-on');
+		//if the password is empty, assume it means optional
 		if (pwd !== '')
 		{
 			pwd_confirm.attr('required',true);
 			$this.attr('pattern','^.{6,}$');
 		}
-		else
+		else if ($this.is('.edit'))
 		{
 			pwd_confirm.attr('required',false);
 			$this.attr('pattern','');
@@ -18,7 +19,10 @@ $(function(){
 			$elem.text('');
 			return;
 		}
+		//Set the confirmation pattern to match
 		pwd_confirm.attr('pattern',pwd);
+
+		//Calculate the level and output
 		var level = 0;
 		this.setCustomValidity("");
 		if (pwd.length < 6) { 

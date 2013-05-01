@@ -71,3 +71,9 @@ App::error(function(ErrorException $exception)
 {
     return Response::view('errors.fatal', array(), 500);
 });
+
+//SQL errors(500)
+App::error(function(PDOException $exception)
+{
+    return Response::view('errors.sql', array(), 500);
+});
