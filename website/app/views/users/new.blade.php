@@ -24,7 +24,7 @@ Nýr notandi
     <div class="controls">
       <div class="input-append">
         <input type="password" name="password" id="password" placeholder="Lykilorð" pattern=""/>
-        <span class="add-on">Of stutt</span>
+        <span class="add-on"></span>
       </div>
     </div>
   </div>

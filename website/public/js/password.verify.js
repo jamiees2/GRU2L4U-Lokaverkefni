@@ -8,7 +8,7 @@ $(function(){
 		if (pwd !== '')
 		{
 			pwd_confirm.attr('required',true);
-			$this.attr('pattern','^{6,}$');
+			$this.attr('pattern','^.{6,}$');
 		}
 		else
 		{
