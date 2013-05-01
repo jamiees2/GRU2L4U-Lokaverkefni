@@ -27,16 +27,13 @@ namespace gru_lokaverk
         string[] selectedValueArray;
         string SelectedValue, infoSentFrom;
 
-        public classes_edit(List<string> editClass, String Selected, string infoSent)
+        public classes_edit(String Selected, string infoSent)
         {
             database.ConnectToDatabase();
             InitializeComponent();
-            classEdit = editClass;
             SelectedValue = Selected;
             infoSentFrom = infoSent;
             addInfoToTextbox();
-
-
         }
 
         private void btn_Close_Click(object sender, RoutedEventArgs e)
@@ -57,18 +54,16 @@ namespace gru_lokaverk
         {
             if (infoSentFrom == "rooms")
             {
+                classEdit = database.getRooms();
                 comboBox_types.Visibility = Visibility.Visible;
                 txtbox_Descr.Visibility = Visibility.Hidden;
-
             }
             else
             {
+                classEdit = database.getAlldata("classes", "name");
                 comboBox_types.Visibility = Visibility.Hidden;
                 txtbox_Descr.Visibility = Visibility.Visible;
             }
-
-
-
             foreach (var item in classEdit)
             {
                 selectedValueArray = new string[4];
@@ -77,9 +72,6 @@ namespace gru_lokaverk
                 {
                     txtbox_Name.Text = selectedValueArray[1];
                     txtbox_Descr.Text = selectedValueArray[2];
-
-
-
                     //For the combobox in classes
                     if (infoSentFrom == "rooms") // There is not need for this IF sentence, but takes less RAM if classes is not running.
                     {
@@ -143,8 +135,6 @@ namespace gru_lokaverk
                     database.Update("rooms", "id", "type", null, typeID, null, selectedValueArray[0], infoSentFrom);
                 }
              }
-
-
             this.Close();      
          }
         

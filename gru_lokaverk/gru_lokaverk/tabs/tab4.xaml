@@ -6,9 +6,6 @@
              mc:Ignorable="d"
              xmlns:util="clr-namespace:Wpf.Util"
              d:DesignHeight="440" d:DesignWidth="840">
-
-
-
     <UserControl.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="SnapsToDevicePixels" Value="true"/>
@@ -90,5 +87,4 @@
         <Grid Name="rooms_weekPlan" Height="440" Background="LightSteelBlue" Margin="71,1,12,23"></Grid>
         <Button Content="Refresh" Height="33" HorizontalAlignment="Left" Margin="0,407,0,0" Name="btn_refresh" VerticalAlignment="Top" Width="65" Click="btn_refresh_Click" />
     </Grid>
-
 </UserControl>

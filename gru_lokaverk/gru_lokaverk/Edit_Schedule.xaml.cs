@@ -58,8 +58,6 @@ namespace gru_lokaverk
                         database.InsertInto3Columns("timetable", "class_id", "room_id", "day_period_id", classID, roomID, day_periodID);
                     else if (ButtonContent != " -- Please Select -- ")
                         database.Update("timetable", "class_id", "day_period_id", "room_id", day_periodID, roomID, classID, "sentfromEditWeek");
-
-
                     this.Close();
                 }
             }
@@ -67,8 +65,6 @@ namespace gru_lokaverk
             {
                 return;
             }
-
-
         }
         public Button closeWindow
         {
@@ -142,9 +138,6 @@ namespace gru_lokaverk
                     if (tempSplitArray[1] == SelectedRoom)
                         roomID = tempSplitArray[0];
                 }
-                
-
-
             }
             catch (Exception e)
             {

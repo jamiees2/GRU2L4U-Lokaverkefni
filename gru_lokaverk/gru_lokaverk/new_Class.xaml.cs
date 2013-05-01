@@ -45,7 +45,6 @@ namespace gru_lokaverk
                 {
                     tempArray = item.Split(split);
                     comboBox_types.Items.Add(tempArray[1]);
-
                 }
                 comboBox_types.Items.Insert(0," -- Please Select -- ");
                 comboBox_types.SelectedIndex = 0;
@@ -91,14 +90,12 @@ namespace gru_lokaverk
                 }
                 else
                     return;
-
             }
             catch (Exception)
             {
 
             }
             this.Close();
-
         }
     }
 }

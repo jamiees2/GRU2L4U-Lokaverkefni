@@ -25,7 +25,6 @@ namespace gru_lokaverk.tabs
         string[] CurrentUser;
         List<string> users = new List<string>();
 
-
         public login()
         {
             try
@@ -52,8 +51,6 @@ namespace gru_lokaverk.tabs
                 MessageBox.Show("Vitlaust notendanafn og/eða lykilorð");
             else if (CurrentUser[4] != "1")
                 MessageBox.Show("Því miður hefur þú ekki réttindi");
-
-            
         }
 
         private bool userValidation()

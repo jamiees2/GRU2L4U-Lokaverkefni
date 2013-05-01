@@ -22,7 +22,6 @@ namespace gru_lokaverk
     /// </summary>
     public partial class tab4 : UserControl
     {
-
         sql database = new sql(); //SQL Database
         Edit_Schedule editWindow;
 
@@ -98,10 +97,9 @@ namespace gru_lokaverk
             }
             catch (Exception)
             {
-
+                return;
             }
         }
-
 
         private void fillDataIntoGrid()
         {
@@ -143,11 +141,6 @@ namespace gru_lokaverk
 
                         this.rooms_weekPlan.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
 
-
-
-                        
-
-                        
                         //Adds days to the week
                         if ((counter) % 16 == 0 && counter > 15)// (counter) % 15 == 0 && counter > 5
                         {
@@ -155,20 +148,13 @@ namespace gru_lokaverk
                         }
                         //Adds the time to the schedule
 
-                        
-
-                        
                         if (counter > 0 && counter < 16)
                         {
                             string[] tempArray = new string[5];
                             char split = ';';
                             tempArray = time[(counter - 1)].Split(split);
                             btn_content = tempArray[1] + " - " + tempArray[2];
-                            
-                            
                         }
-                        
-                        
                         /* Timestamp
                          * 8:10 (ID - 1)
                          * 8:50 (ID - 2)
@@ -224,7 +210,6 @@ namespace gru_lokaverk
                         }
                         string dayID_periodID = dayOfWeekID + ";" + periodID;
 
-
                         btn_grid[counter].Tag = dayID_periodID;
                         btn_grid[counter].Content = btn_content;
 
@@ -261,7 +246,7 @@ namespace gru_lokaverk
             return false;
         }
 
-        private void refresh()
+        private void refreshAll()
         {
             dayOfWeekID = 0;
             periodID = 0;
@@ -295,26 +280,23 @@ namespace gru_lokaverk
             {
                 RefreshTab4();
             }
-
-
         }
 
         void ClearVal_Click(object sender, RoutedEventArgs e)
         {
-            refresh();
+            refreshAll();
         }
 
         void UpdateList_Click(object sender, RoutedEventArgs e)
         {
-            refresh();
+            refreshAll();
         }
 
         void closeWindow_Click(object sender, RoutedEventArgs e)
         {
             if (editWindow != null)
                 editWindow = null;
-            refresh();
-
+            refreshAll();
         }
 
         private void ClassesView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -322,12 +304,12 @@ namespace gru_lokaverk
             Classes valueSelected = (Classes)ClassesView.SelectedItems[0];
             selectedRoom = valueSelected.name;
 
-            refresh();
+            refreshAll();
         }
 
         private void btn_refresh_Click(object sender, RoutedEventArgs e)
         {
-            refresh();
+            refreshAll();
         }
     }
 }

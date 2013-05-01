@@ -81,9 +81,7 @@ namespace gru_lokaverk
             {
                 MessageBox.Show(e.ToString());
             }
-
         }
-
         private void Show_PopupToolTip(object sender, MouseEventArgs e)
         {
             ListViewItem listViewItem = e.Source as ListViewItem;
@@ -112,7 +110,7 @@ namespace gru_lokaverk
                     if (editWin != null)
                         editWin.Close();
 
-                    editWin = new classes_edit(getRooms, valueSelected.id.ToString(),SendingFrom);//Sends the list and the ID of the value selected
+                    editWin = new classes_edit(valueSelected.id.ToString(),SendingFrom);//Sends theID of the value selected
                     editWin.closeWindow.Click += new RoutedEventHandler(closeWindow_Click);
                     editWin.UpdateList.Click += new RoutedEventHandler(UpdateList_Click);
                     editWin.Owner = Window.GetWindow(this);
@@ -140,7 +138,6 @@ namespace gru_lokaverk
         {
             ShowClasses();
         }
-
         private void btn_Add_Click(object sender, RoutedEventArgs e)
         {
             if (New_ClassWindow != null)
@@ -163,10 +160,6 @@ namespace gru_lokaverk
             deleteWindow.UpdateList.Click += new RoutedEventHandler(UpdateList_Click);
             deleteWindow.Owner = Window.GetWindow(this);
             deleteWindow.ShowDialog();
-
-
-
         }
-
     }
 }

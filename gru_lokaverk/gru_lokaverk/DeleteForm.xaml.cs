@@ -33,7 +33,6 @@ namespace gru_lokaverk
                 label1.Content = string.Format("Are you sure you want to\npermanently delete class {0} ?", nameToDelete);
             else if (infoSentFrom == "rooms")
                 label1.Content = string.Format("Are you sure you want to\npermanently delete room {0} ?", nameToDelete);
-            
         }
 
         private void btn_Close_Click(object sender, RoutedEventArgs e)
@@ -58,7 +57,7 @@ namespace gru_lokaverk
                 else if (infoSentFrom == "rooms")
                     database.deleteData("rooms", "number", nameToDelete);
             }
-            catch (Exception l)
+            catch (Exception)
             {
                 MessageBox.Show("Ekki er hægt að eyða gögnum. Eru í notkun annarsstaðar.");
             }

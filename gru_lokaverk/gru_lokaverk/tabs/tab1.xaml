@@ -50,12 +50,7 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-
-
-
     <Grid Width="840">
-
-        
         <Grid Name="WeekPlan" Height="440" Width="840" Background="LightSteelBlue" ShowGridLines="False" >
         </Grid>
     </Grid>

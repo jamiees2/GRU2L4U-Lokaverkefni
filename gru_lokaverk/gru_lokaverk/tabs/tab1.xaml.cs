@@ -70,6 +70,8 @@ namespace gru_lokaverk
                 weekDays = database.getAlldata("days","id");
                 time = database.getAlldata("periods","id");
                 counter = 0;
+                dayOfWeekID = 0;
+                periodID = 0;
                 string[] tempSplitArray = new string[2];
                 foreach (string item in weekDays)//Gets the weekdays from the database and puts them into an array.
                 {
@@ -93,14 +95,10 @@ namespace gru_lokaverk
                         this.WeekPlan.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto});
 
                         content = "";
-
-
-
                         //Adds days to the week
                         if ((counter)%16==0 && counter >15)// (counter) % 15 == 0 && counter > 5
-                        {
                             content = days[j-1];
-                        }
+                        
                         //Adds the time to the schedule
                         if (counter>0 && counter<16)
                         {
@@ -109,9 +107,6 @@ namespace gru_lokaverk
                             tempArray = time[counter-1].Split(split);
                             content = tempArray[1] + " - " + tempArray[2];
                         }
-
-
-
                         if (counter > 16 && counter < 32)//Monday
                         {
                             if (CheckRoomFree())
@@ -125,9 +120,8 @@ namespace gru_lokaverk
                                 }
                             }
                             else
-                            {
                                 content = "Allt laust!";
-                            }
+                            
                         }
                         else if (counter > 32 && counter < 48)//Tuesday
                         {
@@ -241,10 +235,17 @@ namespace gru_lokaverk
                             btn_grid[counter].Background = Brushes.LightGray;
                         if (periodID == 0 && dayOfWeekID == 0)
                         {
-                            btn_grid[counter].Background = Brushes.LightSteelBlue;
-                            content = "";
+                            btn_grid[counter].FontFamily = new System.Windows.Media.FontFamily("Lucida Console");
+                            btn_grid[counter].FontSize = 13;
+                            btn_grid[counter].Background = Brushes.RosyBrown;
+                            btn_grid[counter].BorderBrush = Brushes.Black;
+                            btn_grid[counter].BorderThickness = new Thickness(5.0);
+                            content = "Refresh";
                         }
-                        btn_grid[counter].TabIndex = counter;
+
+                        string DayId_PeriodID = dayOfWeekID + ";" + periodID;
+
+                        btn_grid[counter].Tag = DayId_PeriodID;
                         btn_grid[counter].Content = content;//Adds number to the fields
 
                         Grid.SetRow(btn_grid[counter], i);
@@ -265,10 +266,16 @@ namespace gru_lokaverk
                 MessageBox.Show(ex.ToString());
             }
         }
-
+        //In case click would be used on btns
         void tab1_Click(object sender, RoutedEventArgs e)
         {
-            
+            string[] dayID_PeriodID_Array = new string[2];
+            dayID_PeriodID_Array = (((Button)sender).Tag.ToString()).Split(';');
+            if (dayID_PeriodID_Array[0] == "0" && dayID_PeriodID_Array[1] == "0")
+            {
+                this.WeekPlan.Children.Clear();
+                fillDataIntoGrid();
+            }
         }
 
         private bool CheckRoomFree()
@@ -293,7 +300,6 @@ namespace gru_lokaverk
                         tempList.Add(tempSplitArray[3]);
                         check = true;
                     }
-
                 }
             }
             roomClassSetup = roomClassSetup.Except(tempList).ToList();

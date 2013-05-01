@@ -30,7 +30,6 @@ namespace gru_lokaverk
         List<string> getClasses; //List for Classes
         string SendingFrom = "classes";
 
-
         public tab2()
         {
             try
@@ -111,7 +110,7 @@ namespace gru_lokaverk
 
                     if (editWin != null)
                         editWin.Close();
-                    editWin = new classes_edit(getClasses, valueSelected.id.ToString(),SendingFrom);//Sends the list and the ID of the value selected
+                    editWin = new classes_edit(valueSelected.id.ToString(),SendingFrom);//Sends the ID of the value selected
                     editWin.closeWindow.Click += new RoutedEventHandler(closeWindow_Click);
                     editWin.UpdateList.Click +=new RoutedEventHandler(UpdateList_Click);
                     editWin.Owner = Window.GetWindow(this);

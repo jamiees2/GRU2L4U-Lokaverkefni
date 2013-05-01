@@ -48,9 +48,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
     </UserControl.Resources>
-
 
     <StackPanel Name="MyPanel">
         <Popup  Height="Auto" Width="Auto" Name="MyToolTip" StaysOpen="True" AllowsTransparency="True"  >
@@ -86,8 +84,6 @@
                                     </Button>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
-
-
                         </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
@@ -97,6 +93,5 @@
             <Label Content="Hint: Double click to edit." Height="28" Name="label1" />
             <Button Content="New" Height="23" Name="btn_Add" Width="75" Click="btn_Add_Click" />
         </Grid>
-
     </StackPanel>
 </UserControl>

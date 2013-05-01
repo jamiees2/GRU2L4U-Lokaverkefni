@@ -4,7 +4,6 @@
         Title="Vikuplan kennslustofa í tölvustofum Tækniskólanns" Height="520" Width="979"
         xmlns:tabs="clr-namespace:gru_lokaverk" ResizeMode="NoResize" Icon="/gru_lokaverk;component/bin/Debug/Pictures/icon.png" WindowStartupLocation="CenterScreen">
     
-    
     <Window.Resources>
         <Style x:Key="MouseOverButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="SnapsToDevicePixels" Value="true"/>
@@ -50,13 +49,6 @@
             </Setter>
         </Style>
     </Window.Resources>
-
-
-
-
-
-
-
     <Grid>
         <TabControl Height="473" Width="945" HorizontalAlignment="Left" Name="tabControl1" VerticalAlignment="Top"  TabStripPlacement="Left" BorderBrush="{x:Null}">
             <TabItem Header="Lausar stofur" Name="tab1" IsSelected="True" Height="100">
@@ -79,8 +71,6 @@
                     <tabs:tab4/>
                 </Grid>
             </TabItem>
-
         </TabControl>
-
     </Grid>
 </Window>
