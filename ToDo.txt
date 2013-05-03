@@ -4,26 +4,26 @@ Ggrunnur:
 Users
 Stofur
 "equipment"
-�fangi
-T�matafla
+áfangi
+Tímatafla
 
 
 
 C# hlutur:
-S�� dagskr�
-Skr� dagskr�/�fanga
-breyta t�ma (hven�r t�mi byrjar/endar)
-b�ta vi� n�rri stofu
-Fer �tarlega � dagskr�nna
+Séð dagskrá
+Skrá dagskrá/áfanga
+breyta tíma (hvenær t�mi byrjar/endar)
+bæta við nýrri stofu
+Fer ítarlega í dagskránna
 
 
 
 Vefsíða:
 Responsive
-S�� dagskr� (+sundurli�un)
+Séð dagskrá (+sundurliðun)
 
-Leiguskilm�la?
-Fá staðfestingu � p�sti (eða þegar búið er að accepta)
+Leiguskilmála?
+Fá staðfestingu í pósti (eða þegar búið er að accepta)
 Geta niðurhalað admin client ef user hefur réttindi
 
 
@@ -31,7 +31,7 @@ Ideas:
 Myndir af stofum
 Myndir af nöfnum af áföngum og draga þá inní reiti(töflu)
 Ef vikan breytist yfir önnina, �fangar skiptast � stofum
-Ensk/�slenska (Tungum�la valm�guleiki)
+Ensk/íslenska (Tungumála valmöguleiki)
 Kort
 Annir
 Conflict Resolution
@@ -40,4 +40,6 @@ c# minimize to tray
 
 Heimasida: Responsive i simum thannig ad bara dagurinn i dag birtist a adalsidunni (svo er haegt ad fara i alla viku)
 
-Breyta logo � vefs��u (mynd � tabinu)
+Breyta logo á vefsíðu (mynd á tabinu)
+
+Email server - Umsókn fyrir nýjum admin aðgang
