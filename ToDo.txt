@@ -14,7 +14,7 @@ Séð dagskrá
 Skrá dagskrá/áfanga
 breyta tíma (hvenær t�mi byrjar/endar)
 bæta við nýrri stofu
-Fer ítarlega í dagskránna
+Fer ítarlega í dagskrána
 
 
 
@@ -30,7 +30,7 @@ Geta niðurhalað admin client ef user hefur réttindi
 Ideas:
 Myndir af stofum
 Myndir af nöfnum af áföngum og draga þá inní reiti(töflu)
-Ef vikan breytist yfir önnina, �fangar skiptast � stofum
+Ef vikan breytist yfir önnina, áfangar skiptast á stofum
 Ensk/íslenska (Tungumála valmöguleiki)
 Kort
 Annir
